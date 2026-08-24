@@ -326,3 +326,29 @@ body{background:var(--paper)!important;color:var(--ink)!important}
 .thanks-card p{max-width:590px;margin:0 auto;color:var(--muted);line-height:1.8}
 .thanks-actions{margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 @media(max-width:560px){.thanks-section{padding:58px 0}.thanks-card{padding:42px 22px}.thanks-actions .btn{width:100%;text-align:center}}
+
+/* v14 — refined transparent hero buttons */
+.page-home .hero .btn.hero-luxury{
+  background:rgba(48,38,31,.20)!important;
+  color:#fffaf4!important;
+  border:1px solid rgba(211,172,141,.78)!important;
+  backdrop-filter:blur(7px) saturate(110%)!important;
+  -webkit-backdrop-filter:blur(7px) saturate(110%)!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.035)!important;
+  text-shadow:0 1px 8px rgba(31,24,19,.16)!important;
+}
+.page-home .hero .btn.hero-luxury:hover{
+  background:#8f6648!important;
+  border-color:#8f6648!important;
+  color:#fff!important;
+  box-shadow:0 12px 30px rgba(94,65,45,.20)!important;
+  text-shadow:none!important;
+  transform:translateY(-2px)!important;
+}
+@media(max-width:560px){
+  .page-home .hero .btn.hero-luxury{
+    background:rgba(48,38,31,.24)!important;
+    color:#fffaf4!important;
+    border-color:rgba(211,172,141,.82)!important;
+  }
+}

@@ -33,57 +33,35 @@
   box.addEventListener('click',e=>{if(e.target===box)close()}); document.addEventListener('keydown',e=>{if(!box.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
 })();
 
-// Availability request form — test delivery via FormSubmit AJAX
+// Availability request form — direct FormSubmit POST
 (function(){
   const form=document.querySelector('#availability-form');
   if(!form) return;
-  const status=form.querySelector('.form-status');
-  const submit=form.querySelector('button[type="submit"]');
-  const lang=document.documentElement.lang==='en'?'en':'it';
-  const copy=lang==='en' ? {
-    sending:'Sending your request…',
-    error:'The request could not be sent. If this is the first test, check diomedeguest@gmail.com and activate FormSubmit from the email you received, then try again.',
-    invalid:'Please complete all required fields correctly.',
-    button:'Send request'
-  } : {
-    sending:'Invio della richiesta in corso…',
-    error:'Non è stato possibile inviare la richiesta. Se è la prima prova, controlla diomedeguest@gmail.com e attiva FormSubmit dalla mail ricevuta, poi riprova.',
-    invalid:'Compila correttamente tutti i campi obbligatori.',
-    button:'Invia richiesta'
-  };
-  function setStatus(text,type){
-    if(!status) return;
-    status.textContent=text;
-    status.className='form-status show '+(type||'');
+  const next=form.querySelector('#form-next');
+  if(next){
+    // FormSubmit requires an absolute URL for the custom thank-you page.
+    next.value=new URL('grazie.html', window.location.href).href;
   }
-  form.addEventListener('submit',async function(e){
+  const status=form.querySelector('.form-status');
+  const lang=document.documentElement.lang==='en'?'en':'it';
+  form.addEventListener('submit',function(e){
     if(!form.checkValidity()){
       e.preventDefault();
       form.reportValidity();
-      setStatus(copy.invalid,'error');
+      if(status){
+        status.textContent=lang==='en'?'Please complete all required fields correctly.':'Compila correttamente tutti i campi obbligatori.';
+        status.className='form-status show error';
+      }
       return;
     }
-    if(!window.fetch) return; // normal POST fallback
-    e.preventDefault();
-    submit.disabled=true;
-    const original=submit.textContent;
-    submit.textContent=lang==='en'?'Sending…':'Invio…';
-    setStatus(copy.sending,'sending');
-    try{
-      const res=await fetch(form.dataset.endpoint,{
-        method:'POST',
-        body:new FormData(form),
-        headers:{'Accept':'application/json'}
-      });
-      let data={};
-      try{ data=await res.json(); }catch(_e){}
-      const ok=res.ok && (data.success===true || data.success==='true' || /success/i.test(String(data.message||'')));
-      if(!ok) throw new Error('Form delivery not confirmed');
-      window.location.href=form.dataset.success||'grazie.html';
-    }catch(err){
-      setStatus(copy.error,'error');
-      submit.disabled=false;
-      submit.textContent=original||copy.button;
+    const btn=form.querySelector('button[type="submit"]');
+    if(btn){
+      btn.disabled=true;
+      btn.textContent=lang==='en'?'Sending…':'Invio…';
+    }
+    if(status){
+      status.textContent=lang==='en'?'Sending your request…':'Invio della richiesta in corso…';
+      status.className='form-status show sending';
     }
   });
 })();

@@ -352,3 +352,237 @@ body{background:var(--paper)!important;color:var(--ink)!important}
     border-color:rgba(211,172,141,.82)!important;
   }
 }
+
+
+/* v16 — booking platform buttons, ready for future listing URLs */
+.booking-options{border-top:1px solid var(--line);background:#fbf8f3}
+.booking-inner{text-align:center;max-width:850px}
+.booking-inner h2{margin-bottom:12px}
+.booking-inner>p{max-width:620px;margin:0 auto;color:var(--muted)}
+.booking-actions{display:flex;justify-content:center;align-items:stretch;gap:12px;flex-wrap:wrap;margin-top:28px}
+.platform-btn{min-width:170px;padding:11px 22px;border:1px solid rgba(143,102,72,.55);display:flex;flex-direction:column;justify-content:center;gap:2px;background:transparent;color:var(--ink);text-transform:none;transition:.28s ease}
+.platform-btn strong{font:600 14px/1.2 'DM Sans',Arial,sans-serif;letter-spacing:.01em}
+.platform-btn small{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze)}
+.platform-btn.is-disabled{cursor:default;opacity:.72}
+@media(max-width:560px){.booking-actions{flex-direction:column}.booking-actions .btn,.platform-btn{width:100%;min-height:52px;text-align:center}}
+
+/* v17 */
+.platform-logo-btn{min-width:190px;min-height:62px;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px 22px}.platform-brand{display:block;line-height:0}.platform-brand svg{display:block;width:142px;height:30px;overflow:visible}.booking-word{font:700 23px Arial,sans-serif;fill:#273a78;letter-spacing:-1px}.booking-com{font:700 12px Arial,sans-serif;fill:#273a78}.booking-dot{fill:#2b70c9}.airbnb-brand svg{width:132px;height:32px}.airbnb-mark{fill:none;stroke:#b0784e;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}.airbnb-word{font:600 22px Arial,sans-serif;fill:#3a332e;letter-spacing:-.7px}.platform-logo-btn small{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#94877b}@media(max-width:900px){.platform-logo-btn{width:100%;min-width:0}}
+
+/* v18 — dedicated booking page and monochrome platform marks */
+.booking-page{padding-top:72px;padding-bottom:100px}.booking-page-head{max-width:760px;margin-bottom:42px}.booking-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}.booking-choice{min-height:230px;border:1px solid rgba(143,102,72,.33);background:rgba(255,252,247,.72);padding:30px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-decoration:none;transition:transform .28s ease,border-color .28s ease,background-color .28s ease,box-shadow .28s ease}.booking-choice h2{margin:8px 0 10px;font-size:28px}.booking-choice p{margin:0;color:var(--muted);line-height:1.65}.direct-choice:hover{transform:translateY(-4px);border-color:var(--bronze);background:#fffaf3;box-shadow:0 16px 40px rgba(73,55,43,.08)}.choice-label,.coming-soon{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze)}.choice-action{margin-top:24px;color:var(--bronze);font-size:12px;letter-spacing:.08em;text-transform:uppercase}.platform-choice{align-items:center;text-align:center}.platform-choice.is-disabled{opacity:.82}.platform-mark{width:180px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--bronze);margin-bottom:18px}.platform-mark svg{width:100%;height:100%;display:block;overflow:visible}.brand-word{font:600 22px/1 'DM Sans',Arial,sans-serif;letter-spacing:-.7px;fill:currentColor}.brand-stroke{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.airbnb-wordmark{font-size:22px;letter-spacing:-.5px}.platform-choice .coming-soon{margin-top:20px}.page-prenota .links a[href="prenota.html"]{color:var(--bronze)}@media(max-width:880px){.booking-choice-grid{grid-template-columns:1fr}.booking-choice{min-height:190px;padding:26px}.booking-page{padding-top:48px}}
+
+/* v19 — discreet booking choices near the home footer */
+.home-booking-strip{padding:68px 0 72px;background:#f6f0e7;border-top:1px solid var(--line)}
+.home-booking-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:28px}.home-booking-head h2{font:500 34px/1.15 'Playfair Display',serif;margin:7px 0 0}.home-booking-all{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--bronze);white-space:nowrap}
+.home-booking-actions{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:12px}.home-direct-book,.home-platform-book{min-height:100px;border:1px solid rgba(143,102,72,.34);background:rgba(255,252,247,.58);display:flex;align-items:center;justify-content:center;padding:20px 24px;transition:.28s ease}.home-direct-book{align-items:flex-start;flex-direction:column}.home-direct-book span{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--bronze);margin-bottom:5px}.home-direct-book strong{font:500 21px 'Playfair Display',serif}.home-direct-book:hover{background:#8f6648;color:#fff;border-color:#8f6648;transform:translateY(-2px)}.home-direct-book:hover span{color:#fff}.home-platform-book{flex-direction:column;gap:5px;color:var(--bronze)}.home-platform-mark{width:155px;height:35px;display:block}.home-platform-mark svg{width:100%;height:100%;display:block}.home-airbnb{height:38px}.home-platform-book small{font-size:8px;letter-spacing:.13em;text-transform:uppercase;color:#8c8178}.home-platform-book.is-disabled{cursor:default}
+@media(max-width:760px){.home-booking-strip{padding:52px 0}.home-booking-head{align-items:flex-start;flex-direction:column;gap:12px}.home-booking-head h2{font-size:29px}.home-booking-actions{grid-template-columns:1fr}.home-direct-book,.home-platform-book{min-height:88px}}
+
+/* v20 — cleaner header + editorial direct-booking experience */
+.header .nav{grid-template-columns:auto 1fr auto auto}
+.header .cta{display:none!important}
+
+.availability-main{background:linear-gradient(180deg,#fbf7f0 0%,#f6efe5 100%)}
+.availability-hero{padding:42px 0 110px}
+.availability-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(520px,1.18fr);gap:72px;align-items:start}
+.availability-intro{padding-top:38px;position:sticky;top:110px}
+.availability-intro h1{font-family:'Playfair Display',serif;font-size:clamp(48px,5.4vw,78px);line-height:.98;letter-spacing:-.035em;margin:14px 0 24px;color:#29231f;font-weight:500}
+.availability-intro h1 em{font-weight:500;color:var(--bronze)}
+.availability-intro>p{font-size:17px;line-height:1.8;max-width:520px;color:#675d55;margin:0 0 42px}
+.availability-note{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:17px 0;border-top:1px solid rgba(125,92,67,.2)}
+.availability-note:last-child{border-bottom:1px solid rgba(125,92,67,.2)}
+.availability-note>span{font-size:10px;letter-spacing:.18em;color:var(--bronze);padding-top:4px}
+.availability-note strong{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;color:#332c27}
+.availability-note p{margin:4px 0 0;font-size:13px;line-height:1.55;color:#82766c}
+
+.availability-form-panel{background:rgba(255,253,249,.94);border:1px solid rgba(145,104,76,.22);box-shadow:0 28px 70px rgba(75,53,39,.08);padding:0}
+.form-panel-top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 28px;border-bottom:1px solid rgba(145,104,76,.17)}
+.form-panel-top>span{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--bronze);font-weight:600}
+.form-panel-top small{font-size:11px;color:#8b7e74}
+.availability-form-panel .form-wrap{padding:34px 34px 38px;background:transparent;box-shadow:none;border:0;max-width:none}
+.availability-form-panel .form-grid{gap:24px 20px}
+.availability-form-panel .field label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#675b52;margin-bottom:9px;font-weight:600}
+.availability-form-panel input:not([type="radio"]):not([type="checkbox"]),
+.availability-form-panel select,
+.availability-form-panel textarea{
+  width:100%;border:0;border-bottom:1px solid rgba(72,61,53,.28);border-radius:0;
+  background:transparent;padding:12px 2px 13px;color:#2b2622;font:inherit;outline:none;
+  transition:border-color .22s ease,background-color .22s ease
+}
+.availability-form-panel input:focus,.availability-form-panel select:focus,.availability-form-panel textarea:focus{border-bottom-color:var(--bronze);background:rgba(176,120,78,.025)}
+.availability-form-panel textarea{min-height:110px;resize:vertical}
+.availability-form-panel .checks{display:flex;gap:24px;padding-top:5px}
+.availability-form-panel .checks label{display:flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-size:14px;font-weight:400;color:#4b433d}
+.availability-submit{
+  width:100%;border:1px solid var(--bronze);background:var(--bronze);color:#fffaf4;
+  padding:17px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+  cursor:pointer;transition:transform .28s ease,background-color .28s ease,box-shadow .28s ease,border-color .28s ease
+}
+.availability-submit span{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.availability-submit small{font-size:10px;letter-spacing:.04em;opacity:.86}
+@media(hover:hover) and (pointer:fine){
+ .availability-submit:hover{transform:translateY(-2px);background:#8c5f40;border-color:#8c5f40;box-shadow:0 14px 30px rgba(127,84,54,.18)}
+}
+.availability-submit:focus-visible{outline:2px solid #2f2925;outline-offset:3px}
+
+/* Refined "Richiedi disponibilità" card on the home page */
+.direct-book-luxury{
+  position:relative;overflow:hidden;border-color:rgba(143,102,72,.45)!important;
+  background:linear-gradient(135deg,rgba(255,252,247,.92),rgba(250,243,233,.72))!important;
+}
+.direct-book-luxury:before{
+  content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:var(--bronze);
+  transform:scaleY(.38);transform-origin:center;transition:transform .28s ease
+}
+.direct-book-luxury span{font-size:10px!important;letter-spacing:.16em!important;text-transform:uppercase;color:var(--bronze)!important}
+.direct-book-luxury strong{font-family:'Playfair Display',serif;font-weight:500!important;font-size:24px!important;letter-spacing:-.02em}
+@media(hover:hover) and (pointer:fine){
+ .direct-book-luxury:hover{background:var(--bronze)!important;color:#fffaf3!important;transform:translateY(-3px)}
+ .direct-book-luxury:hover:before{transform:scaleY(1);background:#fffaf3}
+ .direct-book-luxury:hover span{color:#fff4e9!important}
+}
+
+@media(max-width:900px){
+ .header .nav{grid-template-columns:auto 1fr auto}
+ .availability-layout{grid-template-columns:1fr;gap:34px}
+ .availability-intro{position:static;padding-top:6px}
+ .availability-hero{padding:20px 0 72px}
+ .availability-form-panel .form-wrap{padding:26px 20px 30px}
+ .form-panel-top{padding:18px 20px}
+ .availability-submit{align-items:flex-start;flex-direction:column;gap:5px}
+}
+
+/* v21 — property photography in direct availability */
+.availability-property-photo{
+  width:min(100%,520px);
+  aspect-ratio:16/10;
+  overflow:hidden;
+  margin:0 0 34px;
+  position:relative;
+  background:#eee5da;
+}
+.availability-property-photo:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border:1px solid rgba(255,255,255,.36);
+  pointer-events:none;
+}
+.availability-property-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  filter:brightness(1.07) saturate(.96) contrast(.98);
+  transition:transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+@media(hover:hover) and (pointer:fine){
+  .availability-property-photo:hover img{transform:scale(1.025)}
+}
+@media(max-width:900px){
+  .availability-property-photo{width:100%;margin-bottom:26px;aspect-ratio:4/3}
+}
+
+/* v22 — availability background image + booking platform hover */
+.availability-hero-bg{
+  position:relative;
+  background:
+    linear-gradient(90deg, rgba(250,246,239,.93) 0%, rgba(250,246,239,.84) 44%, rgba(250,246,239,.70) 100%),
+    url("assets/bedroom.jpg") center 44% / cover no-repeat;
+  overflow:hidden;
+}
+.en .availability-hero-bg{
+  background:
+    linear-gradient(90deg, rgba(250,246,239,.93) 0%, rgba(250,246,239,.84) 44%, rgba(250,246,239,.70) 100%),
+    url("../assets/bedroom.jpg") center 44% / cover no-repeat;
+}
+.availability-hero-bg:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(240,230,218,.10));
+  pointer-events:none;
+}
+.availability-hero-bg .availability-layout{
+  position:relative;
+  z-index:1;
+}
+.availability-hero-bg .availability-form-panel{
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  background:rgba(255,252,247,.86);
+}
+
+/* Platform buttons: same bronze hover language as the rest of the site */
+.platform-btn{
+  transition:
+    transform .28s ease,
+    background-color .28s ease,
+    border-color .28s ease,
+    color .28s ease,
+    box-shadow .28s ease;
+}
+.platform-btn .platform-brand svg *{
+  transition:fill .28s ease,stroke .28s ease;
+}
+@media(hover:hover) and (pointer:fine){
+  .platform-btn:hover{
+    background:var(--bronze)!important;
+    border-color:var(--bronze)!important;
+    color:#fffaf3!important;
+    transform:translateY(-3px);
+    box-shadow:0 14px 30px rgba(127,84,54,.17);
+  }
+  .platform-btn:hover .booking-word,
+  .platform-btn:hover .booking-com,
+  .platform-btn:hover .airbnb-word{
+    fill:#fffaf3!important;
+  }
+  .platform-btn:hover .booking-dot{
+    fill:#fffaf3!important;
+  }
+  .platform-btn:hover .airbnb-mark{
+    stroke:#fffaf3!important;
+  }
+  .platform-btn:hover small{
+    color:#fff4e9!important;
+  }
+}
+
+/* Keep disabled platform cards visually interactive but non-clickable */
+.platform-btn.is-disabled{
+  cursor:default;
+}
+.platform-btn.is-disabled:hover{
+  pointer-events:auto;
+}
+
+@media(max-width:900px){
+  .availability-hero-bg{
+    background:
+      linear-gradient(180deg, rgba(250,246,239,.88) 0%, rgba(250,246,239,.82) 100%),
+      url("assets/bedroom.jpg") center / cover no-repeat;
+  }
+}
+
+/* v23 — availability page returned to clean ivory editorial layout */
+.availability-hero,
+.availability-hero-bg{
+  background:transparent!important;
+  overflow:visible;
+}
+.availability-hero:before,
+.availability-hero-bg:before{
+  content:none!important;
+}
+.availability-hero .availability-layout,
+.availability-hero-bg .availability-layout{
+  position:relative;
+  z-index:auto;
+}
+.availability-form-panel,
+.availability-hero-bg .availability-form-panel{
+  background:rgba(255,253,249,.96)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}

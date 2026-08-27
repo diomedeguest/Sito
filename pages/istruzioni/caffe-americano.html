@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"><title>Caffè Americano - Diomede Luxury</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Open+Sans:wght@300;400;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../assets/css/style.css"><style>.appliance-illustration{width:170px;height:125px;margin:0 auto;display:flex;align-items:center;justify-content:center;border-radius:22px;background:rgba(255,255,255,.48);border:1px solid rgba(163,150,137,.25);box-shadow:0 12px 28px rgba(0,0,0,.05)}.appliance-illustration .material-symbols-outlined{font-size:72px;color:#A39689;font-variation-settings:'wght' 150}.model-label{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:#8c7e70;margin-top:9px}.americano-product-image{width:min(270px,78vw);height:auto;object-fit:contain;display:block;margin:0 auto}</style>
+<style id="diomede-global-back-style">
+.diomede-global-back{
+    position:fixed;
+    top:max(16px, env(safe-area-inset-top));
+    left:16px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #A39689;
+    background:#A39689;
+    color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    cursor:pointer;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:transform .18s ease, background .18s ease;
+    padding:0;
+}
+.diomede-global-back:active{
+    transform:scale(.94);
+    background:#8D8378;
+}
+.diomede-global-back .material-symbols-outlined{
+    font-size:20px;
+    line-height:1;
+    font-variation-settings:'wght' 300;
+}
+@media (max-width:480px){
+    .diomede-global-back{
+        top:max(14px, env(safe-area-inset-top));
+        left:14px;
+        width:36px;
+        height:36px;
+    }
+}
+</style>
+
+
+<style id="diomede-instruction-home-style">
+.diomede-home-btn{
+    text-decoration:none;
+    position:fixed;
+    top:max(16px, env(safe-area-inset-top));
+    left:62px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #A39689;
+    background:#A39689;
+    color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    cursor:pointer;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:transform .18s ease, background .18s ease;
+    padding:0;
+}
+.diomede-home-btn:active{
+    transform:scale(.94);
+    background:#8D8378;
+}
+.diomede-home-btn .material-symbols-outlined{
+    text-decoration:none;
+    font-size:24px;
+    line-height:1;
+    font-variation-settings:'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+@media (max-width:480px){
+    .diomede-home-btn{
+        top:max(14px, env(safe-area-inset-top));
+        left:58px;
+        width:36px;
+        height:36px;
+    }
+}
+</style>
+
+</head><body class="instruction-page">
+
+<button type="button" class="diomede-global-back" aria-label="Torna alla pagina precedente" title="Indietro" onclick="diomedeGoBack()">
+    <span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+
+<a href="../menu.html" class="diomede-home-btn" aria-label="Vai alla Home" title="Home">
+    <span class="material-symbols-outlined">home</span>
+</a>
+
+
+<div class="lang-switcher"><div id="btn-it" class="lang-btn" onclick="setLanguage('it')">ITA</div><div id="btn-en" class="lang-btn" onclick="setLanguage('en')">ENG</div></div>
+<div class="hero-header"><img src="../../assets/images/header.png" alt="Diomede Luxury Logo" class="logo-img"><div class="hero-overlay"></div></div>
+<div class="container"><div class="header-content"><h2 data-it="Caffè Americano" data-en="Filter Coffee Machine">Caffè Americano</h2><div class="divider"></div></div>
+<div class="image-container">
+    <img src="../../assets/images/caffe_americano.png" alt="Macchina del Caffè Americano Ariete 1342" class="instruction-image americano-product-image">
+    <div class="model-label">Ariete 1342</div>
+</div>
+<div class="instruction-section"><div class="instruction-card"><h3><span class="material-symbols-outlined">counter_1</span><span data-it="1. Preparazione" data-en="1. Preparation">1. Preparazione</span></h3><ul class="step-list"><li><span class="material-symbols-outlined item-icon">water_drop</span><div><strong data-it="Aggiungi acqua" data-en="Add water">Aggiungi acqua</strong><span data-it="Riempi il serbatoio con acqua fresca in base alle tazze desiderate, senza superare il livello massimo." data-en="Fill the tank with fresh water for the desired number of cups, without exceeding the maximum level."></span></div></li>
+<li><span class="material-symbols-outlined item-icon">coffee</span><div><strong data-it="Aggiungi il caffè" data-en="Add coffee">Aggiungi il caffè</strong><span data-it="Inserisci il filtro e aggiungi caffè macinato per filtro. Posiziona correttamente la caraffa sulla piastra." data-en="Insert the filter and add filter-ground coffee. Place the carafe correctly on the warming plate."></span></div></li></ul></div><div class="instruction-card"><h3><span class="material-symbols-outlined">counter_2</span><span data-it="2. Preparazione del caffè" data-en="2. Brewing">2. Preparazione del caffè</span></h3><ul class="step-list"><li><span class="material-symbols-outlined item-icon">power_settings_new</span><div><strong data-it="Avvia" data-en="Start">Avvia</strong><span data-it="Premi il tasto di accensione per iniziare l’erogazione. La macchina prepara da 4 a 12 tazze." data-en="Press the power button to start brewing. The machine prepares 4 to 12 cups."></span></div></li>
+<li><span class="material-symbols-outlined item-icon">local_cafe</span><div><strong data-it="Mantieni in caldo" data-en="Keep warm">Mantieni in caldo</strong><span data-it="Al termine, la piastra mantiene il caffè caldo per circa 30 minuti." data-en="After brewing, the warming plate keeps the coffee hot for about 30 minutes."></span></div></li></ul></div><div class="instruction-card full-width-tablet"><h3><span class="material-symbols-outlined">info</span><span data-it="Consigli" data-en="Tips">Consigli</span></h3><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;"><div class="alert-box"><h4 data-it="Caraffa" data-en="Carafe">Caraffa</h4><p data-it="Non rimuovere a lungo la caraffa durante l’erogazione. Riposizionala correttamente sulla piastra." data-en="Do not leave the carafe removed for long while brewing. Place it correctly back on the plate.">Non rimuovere a lungo la caraffa durante l’erogazione. Riposizionala correttamente sulla piastra.</p></div>
+<div class="alert-box"><h4 data-it="Pulizia" data-en="Cleaning">Pulizia</h4><p data-it="Dopo l’uso elimina il filtro usato e risciacqua filtro e caraffa quando sono freddi." data-en="After use, discard the used coffee and rinse the filter and carafe once cool.">Dopo l’uso elimina il filtro usato e risciacqua filtro e caraffa quando sono freddi.</p></div></div></div></div>
+<div class="back-btn-container"><a href="../istruzioni.html" class="back-btn"><span class="material-symbols-outlined">arrow_back_ios_new</span><span data-it="Torna alle istruzioni" data-en="Back to instructions">Torna alle istruzioni</span></a></div></div>
+<script>function setLanguage(lang){localStorage.setItem('preferredLang',lang);document.getElementById('btn-it').classList.toggle('active',lang==='it');document.getElementById('btn-en').classList.toggle('active',lang==='en');document.querySelectorAll('[data-it]').forEach(el=>{el.textContent=el.getAttribute('data-'+lang);});}window.onload=()=>setLanguage(localStorage.getItem('preferredLang')||'it');</script>
+<script id="diomede-global-back-script">
+function diomedeGoBack(){
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        const path = window.location.pathname;
+        if (path.includes('/pages/istruzioni/')) {
+            window.location.href = '../istruzioni.html';
+        } else if (path.includes('/pages/')) {
+            window.location.href = 'menu.html';
+        } else {
+            window.location.href = 'pages/menu.html';
+        }
+    }
+}
+</script>
+
+</body></html>

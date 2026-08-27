@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Beauty & Wellness - Diomede Luxury</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Open+Sans:wght@400;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            margin: 0; padding: 0; 
+            background-color: #F0EDE9; 
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+
+        /* LINGUA SWITCHER - 35px come pagina Partner */
+        .lang-switcher {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .lang-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.6);
+            color: #1a1a1a;
+            font-size: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .lang-btn.active {
+            background: #A39689;
+            color: white;
+            border-color: #A39689;
+        }
+
+        /* HEADER */
+        .hero-header {
+            width: 100%;
+            height: 240px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px 20px;
+            overflow: hidden;
+        }
+
+        .logo-img {
+            width: 100%;
+            max-width: 300px; 
+            height: auto;
+            z-index: 5;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 60px;
+            background: linear-gradient(to top, #F0EDE9, rgba(240, 237, 233, 0));
+        }
+
+        /* CONTAINER */
+        .container { 
+            width: 100%; 
+            max-width: 900px; 
+            margin: -30px auto 0; 
+            padding: 0 20px 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-content { text-align: center; margin-bottom: 30px; }
+
+        h2 { 
+            font-family: 'PT Serif', serif; 
+            font-size: 34px; 
+            margin: 0; 
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: #2c2c2c;
+            text-align: center;
+        }
+        
+        .divider { width: 50px; height: 1px; background-color: #A39689; margin: 10px auto 30px; }
+
+        .info-section { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 20px; 
+        }
+
+        /* CARD PROMO */
+        .promo-card {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(163, 150, 137, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .promo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .brand-info { display: flex; align-items: center; gap: 12px; }
+        .brand-logo { 
+            width: 50px; height: 50px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 1px solid rgba(0,0,0,0.05); 
+            background: #fff; 
+        }
+        .brand-info h3 { 
+            font-family: 'PT Serif', serif; 
+            font-size: 20px; 
+            margin: 0; 
+            font-weight: 700; 
+        }
+
+        .discount-badge {
+            background: #A39689;
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .promo-description { 
+            font-size: 13px; 
+            color: #444; 
+            line-height: 1.6; 
+            margin-bottom: 18px; 
+            text-align: left;
+        }
+
+        .address-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 11px;
+            color: #777;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        .promo-offer {
+            background: rgba(163, 150, 137, 0.1);
+            border-left: 2px solid #A39689;
+            padding: 12px 15px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #5D544C;
+        }
+
+        .flex-row { display: flex; gap: 8px; justify-content: space-between; }
+
+        .btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 5px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+        
+        .action-btn { background: #A39689; color: #fff; }
+        .maps-btn { background: #fff; border: 1px solid rgba(163, 150, 137, 0.4); color: #000; }
+
+        /* PULSANTE BACK */
+        .back-btn-container { text-align: center; margin-top: 50px; }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 35px;
+            background-color: #A39689; 
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .material-symbols-outlined { font-variation-settings: 'wght' 200; }
+        .back-btn .material-symbols-outlined { color: #fff; margin-right: 8px; font-size: 14px; }
+
+        @media (min-width: 768px) {
+            .hero-header { height: 280px; }
+            .logo-img { max-width: 400px; }
+            .container { margin-top: -40px; }
+            .info-section { grid-template-columns: 1fr 1fr; }
+            h2 { font-size: 40px; }
+        }
+    </style>
+
+<style id="diomede-global-back-style">
+.diomede-global-back{
+    position:fixed;
+    top:max(16px, env(safe-area-inset-top));
+    left:16px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #A39689;
+    background:#A39689;
+    color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    cursor:pointer;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:transform .18s ease, background .18s ease;
+    padding:0;
+}
+.diomede-global-back:active{
+    transform:scale(.94);
+    background:#8D8378;
+}
+.diomede-global-back .material-symbols-outlined{
+    font-size:20px;
+    line-height:1;
+    font-variation-settings:'wght' 300;
+}
+@media (max-width:480px){
+    .diomede-global-back{
+        top:max(14px, env(safe-area-inset-top));
+        left:14px;
+        width:36px;
+        height:36px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<button type="button" class="diomede-global-back" aria-label="Torna alla pagina precedente" title="Indietro" onclick="diomedeGoBack()">
+    <span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+
+
+    <div class="lang-switcher">
+        <div id="btn-it" class="lang-btn" onclick="setLanguage('it')">ITA</div>
+        <div id="btn-en" class="lang-btn" onclick="setLanguage('en')">ENG</div>
+    </div>
+
+    <div class="hero-header">
+        <img src="../../assets/images/header.png" alt="Diomede Luxury Logo" class="logo-img">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="header-content">
+            <h2 data-it="Beauty & Wellness" data-en="Beauty & Wellness">Beauty & Wellness</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="info-section">
+            <div class="promo-card">
+                <div class="promo-header">
+                    <div class="brand-info">
+                        <img src="../../assets/images/work.png" alt="Beauty" class="brand-logo">
+                        <h3 data-it="Slot Libero" data-en="Free Slot">Slot Libero</h3>
+                    </div>
+                    <span class="discount-badge">-10%</span>
+                </div>
+                <p class="promo-description" 
+                   data-it="Inserire qui la descrizione del centro estetico, spa o salone di bellezza partner. Descrivi i servizi esclusivi offerti ai clienti Diomede Luxury."
+                   data-en="Insert the description of the partner beauty center, spa or salon here. Describe the exclusive services offered to Diomede Luxury clients.">
+                </p>
+                <div class="address-box">
+                    <span class="material-symbols-outlined" style="font-size: 16px; color:#A39689;">location_on</span>
+                    <span data-it="Via da inserire, 1, 72100 Brindisi" data-en="Address to be inserted, 1, 72100 Brindisi"></span>
+                </div>
+                <div class="promo-offer" 
+                     data-it="Presentando la convenzione Diomede, ottieni subito uno sconto del 10% sui trattamenti."
+                     data-en="By presenting the Diomede agreement, you immediately get a 10% discount on treatments.">
+                </div>
+                <div class="flex-row">
+                    <a href="tel:+390000000000" class="btn action-btn" data-it="Prenota" data-en="Book Now">Prenota</a>
+                    <a href="#" target="_blank" class="btn maps-btn" data-it="Mappa" data-en="Map">Mappa</a>
+                </div>
+            </div>
+
+            <div class="promo-card">
+                <div class="promo-header">
+                    <div class="brand-info">
+                        <img src="../../assets/images/work.png" alt="Wellness" class="brand-logo">
+                        <h3 data-it="Slot Libero" data-en="Free Slot">Slot Libero</h3>
+                    </div>
+                    <span class="discount-badge">-15%</span>
+                </div>
+                <p class="promo-description" 
+                   data-it="Descrizione del secondo partner relativo al benessere. Perfetto per spa, massaggi o percorsi relax dedicati ai nostri ospiti."
+                   data-en="Description of the second wellness partner. Perfect for spas, massages or relaxation paths dedicated to our guests.">
+                </p>
+                <div class="address-box">
+                    <span class="material-symbols-outlined" style="font-size: 16px; color:#A39689;">location_on</span>
+                    <span data-it="Indirizzo da definire, Brindisi" data-en="Address to be defined, Brindisi"></span>
+                </div>
+                <div class="promo-offer" 
+                     data-it="Sconto speciale del 15% riservato esclusivamente ai clienti Diomede Luxury."
+                     data-en="Special 15% discount reserved exclusively for Diomede Luxury customers.">
+                </div>
+                <div class="flex-row">
+                    <a href="tel:+390000000000" class="btn action-btn" data-it="Chiama" data-en="Call">Chiama</a>
+                    <a href="#" target="_blank" class="btn maps-btn" data-it="Posizione" data-en="Location">Posizione</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="../convenzioni.html" class="back-btn">
+                <span class="material-symbols-outlined">arrow_back_ios_new</span> 
+                <span data-it="Torna ai partner" data-en="Back to partners">Torna ai partner</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('preferredLang', lang);
+            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('[data-it]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                const icon = el.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    const iconClone = icon.cloneNode(true);
+                    el.innerHTML = '';
+                    el.appendChild(iconClone);
+                    el.appendChild(document.createTextNode(' ' + text));
+                } else {
+                    el.textContent = text;
+                }
+            });
+        }
+
+        window.onload = () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'it';
+            setLanguage(savedLang);
+        };
+    </script>
+
+
+<script id="diomede-global-back-script">
+function diomedeGoBack(){
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        const path = window.location.pathname;
+        if (path.includes('/pages/istruzioni/')) {
+            window.location.href = '../istruzioni.html';
+        } else if (path.includes('/pages/')) {
+            window.location.href = 'menu.html';
+        } else {
+            window.location.href = 'pages/menu.html';
+        }
+    }
+}
+</script>
+
+</body>
+</html>

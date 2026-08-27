@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Istruzioni Idromassaggio - Diomede Luxury</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Open+Sans:wght@300;400;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+<style id="diomede-global-back-style">
+.diomede-global-back{
+    position:fixed;
+    top:max(16px, env(safe-area-inset-top));
+    left:16px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #A39689;
+    background:#A39689;
+    color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    cursor:pointer;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:transform .18s ease, background .18s ease;
+    padding:0;
+}
+.diomede-global-back:active{
+    transform:scale(.94);
+    background:#8D8378;
+}
+.diomede-global-back .material-symbols-outlined{
+    font-size:20px;
+    line-height:1;
+    font-variation-settings:'wght' 300;
+}
+@media (max-width:480px){
+    .diomede-global-back{
+        top:max(14px, env(safe-area-inset-top));
+        left:14px;
+        width:36px;
+        height:36px;
+    }
+}
+</style>
+
+
+<style id="diomede-instruction-home-style">
+.diomede-home-btn{
+    text-decoration:none;
+    position:fixed;
+    top:max(16px, env(safe-area-inset-top));
+    left:62px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #A39689;
+    background:#A39689;
+    color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    cursor:pointer;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:transform .18s ease, background .18s ease;
+    padding:0;
+}
+.diomede-home-btn:active{
+    transform:scale(.94);
+    background:#8D8378;
+}
+.diomede-home-btn .material-symbols-outlined{
+    text-decoration:none;
+    font-size:24px;
+    line-height:1;
+    font-variation-settings:'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+@media (max-width:480px){
+    .diomede-home-btn{
+        top:max(14px, env(safe-area-inset-top));
+        left:58px;
+        width:36px;
+        height:36px;
+    }
+}
+</style>
+
+<style id="idro-content-layout">
+.idro-manual-image{
+    width:60px;
+    max-width:60px;
+    height:auto;
+    object-fit:contain;
+    display:block;
+    margin:0 auto;
+}
+
+/* Same content proportions as the other instruction guides */
+@media(min-width:700px){
+    body.instruction-page .instruction-section{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        align-items:start;
+    }
+    body.instruction-page .instruction-card{
+        min-width:0;
+    }
+    body.instruction-page .instruction-card.full-width-tablet{
+        grid-column:1 / -1;
+    }
+}
+@media(max-width:699px){
+    body.instruction-page .instruction-section{
+        grid-template-columns:1fr;
+    }
+    body.instruction-page .instruction-card{
+        width:100%;
+    }
+}
+</style>
+
+
+<style id="idro-zoom-style">
+.idro-legend-trigger{
+    position:relative;
+    display:block;
+    margin:0 auto;
+    padding:5px;
+    border:0;
+    background:transparent;
+    cursor:zoom-in;
+    border-radius:10px;
+}
+.idro-legend-trigger:active{transform:scale(.98)}
+
+.idro-zoom-icon{
+    position:absolute;
+    right:6px;
+    bottom:6px;
+    width:21px;
+    height:21px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(163,150,137,.92);
+    color:#fff;
+    font-size:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+    pointer-events:none;
+}
+
+.idro-zoom-modal{
+    position:fixed;
+    inset:0;
+    z-index:12000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:max(14px,env(safe-area-inset-top)) 10px max(14px,env(safe-area-inset-bottom));
+    box-sizing:border-box;
+    background:rgba(25,23,21,.92);
+}
+.idro-zoom-modal.open{display:flex}
+.idro-zoom-content{
+    width:96vw;
+    height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:#f4eee7;
+    border-radius:14px;
+    box-shadow:0 14px 40px rgba(0,0,0,.3);
+    touch-action:none;
+}
+.idro-zoom-content img{
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:94vw;
+    max-height:86vh;
+    object-fit:contain;
+    transform-origin:center center;
+    user-select:none;
+    -webkit-user-drag:none;
+    touch-action:none;
+    transition:transform .08s linear;
+}
+.idro-zoom-close{
+    position:fixed;
+    top:max(14px,env(safe-area-inset-top));
+    right:14px;
+    width:42px;
+    height:42px;
+    border:0;
+    border-radius:50%;
+    background:#A39689;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:12001;
+    cursor:pointer;
+}
+.idro-zoom-content{width:96vw;height:88vh}
+    .idro-zoom-content img{max-width:94vw;max-height:84vh}
+}
+</style>
+
+
+<style id="idro-thumbnail-definitive-fix">
+body.instruction-page .image-container .idro-legend-trigger{
+    width:180px !important;
+    max-width:180px !important;
+    display:block !important;
+    margin:0 auto 8px !important;
+    padding:3px !important;
+    overflow:hidden !important;
+}
+body.instruction-page .image-container .idro-legend-trigger .idro-manual-image{
+    width:174px !important;
+    max-width:174px !important;
+    height:auto !important;
+    display:block !important;
+    margin:0 auto !important;
+    object-fit:contain !important;
+}
+@media(max-width:600px){
+    body.instruction-page .image-container .idro-legend-trigger{
+        width:160px !important;
+        max-width:160px !important;
+    }
+    body.instruction-page .image-container .idro-legend-trigger .idro-manual-image{
+        width:154px !important;
+        max-width:154px !important;
+    }
+}
+</style>
+
+</head>
+<body class="instruction-page">
+
+<button type="button" class="diomede-global-back" aria-label="Torna alla pagina precedente" title="Indietro" onclick="diomedeGoBack()">
+    <span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+
+<a href="../menu.html" class="diomede-home-btn" aria-label="Vai alla Home" title="Home">
+    <span class="material-symbols-outlined">home</span>
+</a>
+
+
+
+    <div class="lang-switcher">
+        <div id="btn-it" class="lang-btn" onclick="setLanguage('it')">ITA</div>
+        <div id="btn-en" class="lang-btn" onclick="setLanguage('en')">ENG</div>
+    </div>
+
+    <div class="hero-header">
+        <img src="../../assets/images/header.png" alt="Diomede Luxury Logo" class="logo-img">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+    <div class="header-content">
+        <h2 data-it="Vasca Idromassaggio" data-en="Whirlpool tub">Vasca Idromassaggio</h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="image-container">
+        <button type="button" class="idro-legend-trigger" onclick="openIdroLegend()" aria-label="Ingrandisci legenda pannello">
+            <span class="material-symbols-outlined idro-zoom-icon" aria-hidden="true">zoom_in</span>
+            <img src="../../assets/images/idromassaggio-manuale-it.png?v=59" data-src-it="../../assets/images/idromassaggio-manuale-it.png?v=59" data-src-en="../../assets/images/idromassaggio-manuale-en.png?v=59"
+                 alt="Manuale rapido pannello vasca idromassaggio"
+                 class="instruction-image idro-manual-image">
+        </button>
+    </div>
+
+<div class="instruction-section">
+
+            <div class="instruction-card">
+                <h3><span class="material-symbols-outlined">bathtub</span> <span data-it="1. Prima di iniziare: riempi la vasca" data-en="1. Before starting: fill the tub">1. Prima di iniziare: riempi la vasca</span></h3>
+                <ul class="step-list">
+                    <li><span class="material-symbols-outlined item-icon">water_drop</span><div><strong data-it="Le 3 manopole" data-en="The 3 knobs">Le 3 manopole</strong><span data-it="Troverai una manopola per l'acqua calda, una per l'acqua fredda e una terza manopola che devia l'acqua tra il doccino e il riempimento della vasca." data-en="There is one knob for hot water, one for cold water and a third knob that diverts the water between the hand shower and the bathtub filler."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">sync_alt</span><div><strong data-it="IMPORTANTE — Seleziona VASCA (ON)" data-en="IMPORTANT — Select BATH (ON)">IMPORTANTE — Seleziona VASCA (ON)</strong><span data-it="Prima di aprire l'acqua, assicurati che la manopola doccino/vasca sia orientata verso VASCA (ON). In caso contrario l'acqua uscirà dal doccino e la vasca non si riempirà correttamente." data-en="Before turning on the water, make sure the shower/bath selector knob is turned towards BATH (ON). Otherwise water will come from the hand shower and the tub will not fill correctly."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">thermostat</span><div><strong data-it="Regola la temperatura" data-en="Adjust the temperature">Regola la temperatura</strong><span data-it="Apri gradualmente acqua calda e fredda e miscelale fino a raggiungere una temperatura confortevole. Evita di riempire la vasca solo con acqua molto fredda." data-en="Gradually open the hot and cold water and mix them until the temperature is comfortable. Avoid filling the tub with very cold water only."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">waves</span><div><strong data-it="Livello minimo dell'acqua" data-en="Minimum water level">Livello minimo dell'acqua</strong><span data-it="Prima di attivare l'idromassaggio, l'acqua deve arrivare circa 8 cm sopra il getto più alto. Non avviare mai la pompa con poca acqua." data-en="Before activating the whirlpool, the water must be about 8 cm above the highest jet. Never start the pump with too little water."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">water_damage</span><div><strong data-it="NON riempire la vaschetta di scolo" data-en="DO NOT fill the drain tray">NON riempire la vaschetta di scolo</strong><span data-it="La vaschetta di scolo deve rimanere libera: non versare o accumulare acqua al suo interno. Se si riempie, la vasca può andare in protezione/blocco. Assicurati inoltre che lo scarico rimanga libero." data-en="The drain tray must remain clear: do not pour or allow water to collect in it. If it fills, the tub may enter protection/lock mode. Also make sure the drain remains clear."></span></div></li>
+                </ul>
+            </div>
+
+            <div class="instruction-card">
+                <h3><span class="material-symbols-outlined">touch_app</span> <span data-it="2. Accendi e avvia l'idromassaggio" data-en="2. Power on and start the whirlpool">2. Accendi e avvia l'idromassaggio</span></h3>
+                <ul class="step-list">
+                    <li><span class="material-symbols-outlined item-icon">power_settings_new</span><div><strong data-it="Accendi il pannello" data-en="Turn on the panel">Accendi il pannello</strong><span data-it="Premi il tasto Power sul pannello touch. Le altre funzioni diventano disponibili dopo l'accensione del display." data-en="Press the Power button on the touch panel. The other functions become available after the display is switched on."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">lock_open</span><div><strong data-it="Se i tasti sono bloccati" data-en="If the controls are locked">Se i tasti sono bloccati</strong><span data-it="Se compare il blocco tastiera, tieni premuto il relativo tasto per circa 2 secondi per sbloccare i comandi." data-en="If the keypad lock is active, press and hold the lock control for about 2 seconds to unlock it."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">waves</span><div><strong data-it="Getti idromassaggio" data-en="Whirlpool jets">Getti idromassaggio</strong><span data-it="Premi il tasto dell'idromassaggio per avviare i getti laterali. Su alcuni modelli l'intensità può essere modificata premendo nuovamente il tasto o ruotando le bocchette." data-en="Press the whirlpool button to start the side jets. On some models, intensity can be adjusted by pressing the button again or rotating the nozzles."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">air</span><div><strong data-it="Massaggio ad aria" data-en="Air massage">Massaggio ad aria</strong><span data-it="Se disponibile sul pannello, premi il tasto della pompa ad aria per attivare o disattivare le bolle d'aria." data-en="If available on the panel, press the air-pump button to switch the air bubbles on or off."></span></div></li>
+                </ul>
+            </div>
+
+            <div class="instruction-card">
+                <h3><span class="material-symbols-outlined">thermostat</span> <span data-it="3. Temperatura dell'acqua" data-en="3. Water temperature">3. Temperatura dell'acqua</span></h3>
+                <ul class="step-list">
+                    <li><span class="material-symbols-outlined item-icon">device_thermostat</span><div><strong data-it="Acqua calda: AMBIENTE + CALDA" data-en="Hot water: AMBIENT + HOT">Acqua calda: AMBIENTE + CALDA</strong><span data-it="Per attivare l'acqua calda, premi sul pannello prima il pulsante AMBIENTE e poi il pulsante CALDA. Il riscaldamento funziona solo quando la pompa dell'acqua è attiva e il livello dell'acqua nella vasca è sufficiente." data-en="To activate hot water, press the AMBIENT button first and then the HOT button on the panel. Heating works only while the water pump is running and there is enough water in the tub."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">slow_motion_video</span><div><strong data-it="Non riscalda rapidamente" data-en="It does not heat quickly">Non riscalda rapidamente</strong><span data-it="Il manuale indica un aumento di circa 1,6 °C all'ora: per questo è importante riempire subito la vasca con acqua già piacevolmente calda, miscelando caldo e freddo." data-en="The manual indicates an increase of about 1.6 °C per hour, so fill the tub with comfortably warm water from the start by mixing hot and cold water."></span></div></li>
+                </ul>
+            </div>
+
+            <div class="instruction-card">
+                <h3><span class="material-symbols-outlined">restart_alt</span> <span data-it="4. Se la vasca va in blocco" data-en="4. If the tub locks">4. Se la vasca va in blocco</span></h3>
+                <ul class="step-list">
+                    <li><span class="material-symbols-outlined item-icon">power_settings_new</span><div><strong data-it="1 — Spegni dal pannello" data-en="1 — Switch off at the panel">1 — Spegni dal pannello</strong><span data-it="Premi il pulsante di spegnimento sul pannello touch e attendi qualche secondo." data-en="Press the power button on the touch panel to switch the tub off, then wait a few seconds."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">power</span><div><strong data-it="2 — Riaccendi" data-en="2 — Switch it on again">2 — Riaccendi</strong><span data-it="Riaccendi la vasca dal pannello. Se torna a funzionare, puoi riprendere normalmente l'utilizzo." data-en="Switch the tub back on from the panel. If it works again, you can continue using it normally."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">restart_alt</span><div><strong data-it="3 — Se resta in protezione" data-en="3 — If protection remains">3 — Se resta in protezione</strong><span data-it="Se la vasca rimane bloccata, non eseguire altre operazioni: interrompi l'uso e contatta la struttura." data-en="If the tub remains locked, do not perform any further operations: stop using the tub and contact the property."></span></div></li>
+                </ul>
+            </div>
+
+            <div class="instruction-card">
+                <h3><span class="material-symbols-outlined">spa</span> <span data-it="5. Funzioni extra" data-en="5. Extra functions">5. Funzioni extra</span></h3>
+                <ul class="step-list">
+                    <li><span class="material-symbols-outlined item-icon">light_mode</span><div><strong data-it="Cromoterapia" data-en="Chromotherapy">Cromoterapia</strong><span data-it="Premi il tasto dedicato per attivare l'illuminazione multicolore a 7 tonalità." data-en="Press the dedicated button to activate the 7-colour multicolour lighting."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">radio</span><div><strong data-it="Radio FM" data-en="FM radio">Radio FM</strong><span data-it="Premi il tasto Radio. TUN avvia la ricerca automatica delle stazioni; VOL +/− regola il volume." data-en="Press the Radio button. TUN starts automatic station search; VOL +/− adjusts the volume."></span></div></li>
+                    <li><span class="material-symbols-outlined item-icon">bubble_chart</span><div><strong data-it="Ozono" data-en="Ozone">Ozono</strong><span data-it="Se presente, la funzione O₃ può essere attivata dal pannello e funziona solo con la pompa dell'acqua accesa." data-en="If fitted, the O₃ function can be activated from the panel and works only while the water pump is running."></span></div></li>
+                </ul>
+            </div>
+
+            <div class="instruction-card full-width-tablet">
+                <h3><span class="material-symbols-outlined">warning</span> <span data-it="Attenzione" data-en="Important">Attenzione</span></h3>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;">
+                    <div class="alert-box"><h4 data-it="Acqua troppo fredda" data-en="Water too cold">Acqua troppo fredda</h4><p data-it="Evita di riempire la vasca con sola acqua molto fredda: sotto circa 26 °C il riscaldatore può andare in protezione. Miscela subito acqua calda e fredda." data-en="Avoid filling the tub with very cold water only: below about 26°C the heater may enter protection mode. Mix hot and cold water from the start."></p></div>
+                    <div class="alert-box"><h4 data-it="Mai senza acqua" data-en="Never run without water">Mai senza acqua</h4><p data-it="Non attivare l'idromassaggio finché l'acqua non supera di circa 8 cm il getto più alto: la pompa potrebbe danneggiarsi." data-en="Do not activate the whirlpool until the water is about 8 cm above the highest jet: the pump could be damaged."></p></div>
+                    <div class="alert-box"><h4 data-it="Prima di riempire" data-en="Before filling">Prima di riempire</h4><p data-it="Controlla sempre che il selettore doccino/vasca sia rivolto verso VASCA (ON). È il passaggio più importante per un corretto riempimento." data-en="Always check that the shower/bath selector points towards BATH (ON). This is the most important step for correct filling."></p></div>
+                    <div class="alert-box"><h4 data-it="In caso di problemi" data-en="If something goes wrong">In caso di problemi</h4><p data-it="Non premere ripetutamente i pulsanti. Spegni dal pannello, attendi qualche secondo e riaccendi. Se il problema continua, contatta la struttura." data-en="Do not repeatedly press the buttons. Switch the panel off, wait a few seconds and switch it on again. If the problem continues, contact the property."></p></div>
+                </div>
+            </div>
+        </div>
+
+<div id="idroZoomModal" class="idro-zoom-modal" aria-hidden="true" onclick="closeIdroLegend(event)">
+    <button type="button" class="idro-zoom-close" onclick="closeIdroLegend(event)" aria-label="Chiudi">
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="idro-zoom-content" onclick="event.stopPropagation()">
+        <img id="idroZoomImage" src="../../assets/images/idromassaggio-manuale-it.png?v=59" data-src-it="../../assets/images/idromassaggio-manuale-it.png?v=59" data-src-en="../../assets/images/idromassaggio-manuale-en.png?v=59" alt="Legenda pannello vasca idromassaggio ingrandita" draggable="false">
+    </div>
+</div>
+
+<div class="back-btn-container">
+            <a href="../istruzioni.html" class="back-btn">
+                <span class="material-symbols-outlined">arrow_back_ios_new</span>
+                <span data-it="Torna alle istruzioni" data-en="Back to instructions">Torna alle istruzioni</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('preferredLang', lang);
+            const btnIt = document.getElementById('btn-it');
+            const btnEn = document.getElementById('btn-en');
+            
+            if(btnIt) btnIt.classList.toggle('active', lang === 'it');
+            if(btnEn) btnEn.classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('[data-it]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                el.textContent = text;
+            });
+
+            document.querySelectorAll('[data-src-it]').forEach(el => {
+                const src = el.getAttribute('data-src-' + lang);
+                if (src) el.setAttribute('src', src);
+            });
+        }
+
+        window.onload = () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'it';
+            setLanguage(savedLang);
+        };
+    </script>
+
+
+<script id="diomede-global-back-script">
+function diomedeGoBack(){
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        const path = window.location.pathname;
+        if (path.includes('/pages/istruzioni/')) {
+            window.location.href = '../istruzioni.html';
+        } else if (path.includes('/pages/')) {
+            window.location.href = 'menu.html';
+        } else {
+            window.location.href = 'pages/menu.html';
+        }
+    }
+}
+</script>
+
+<script id="idro-zoom-script">
+let idroScale=1, idroStartScale=1;
+let idroX=0, idroY=0, idroStartX=0, idroStartY=0;
+let idroPinchDistance=0, idroPanStart=null;
+
+function idroApplyTransform(){
+    const img=document.getElementById('idroZoomImage');
+    if(img) img.style.transform=`translate(${idroX}px, ${idroY}px) scale(${idroScale})`;
+}
+function idroResetZoom(){
+    idroScale=1; idroX=0; idroY=0; idroPanStart=null;
+    idroApplyTransform();
+}
+function openIdroLegend(){
+    const modal=document.getElementById('idroZoomModal');
+    if(!modal) return;
+    idroResetZoom();
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+}
+function closeIdroLegend(event){
+    if(event) event.stopPropagation();
+    const modal=document.getElementById('idroZoomModal');
+    if(!modal) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    idroResetZoom();
+}
+function idroDistance(touches){
+    const dx=touches[0].clientX-touches[1].clientX;
+    const dy=touches[0].clientY-touches[1].clientY;
+    return Math.hypot(dx,dy);
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+    const area=document.querySelector('.idro-zoom-content');
+    if(!area) return;
+
+    area.addEventListener('touchstart',function(e){
+        if(e.touches.length===2){
+            e.preventDefault();
+            idroPinchDistance=idroDistance(e.touches);
+            idroStartScale=idroScale;
+            idroPanStart=null;
+        } else if(e.touches.length===1 && idroScale>1){
+            e.preventDefault();
+            idroPanStart={x:e.touches[0].clientX,y:e.touches[0].clientY};
+            idroStartX=idroX; idroStartY=idroY;
+        }
+    },{passive:false});
+
+    area.addEventListener('touchmove',function(e){
+        if(e.touches.length===2 && idroPinchDistance){
+            e.preventDefault();
+            const ratio=idroDistance(e.touches)/idroPinchDistance;
+            idroScale=Math.min(4,Math.max(1,idroStartScale*ratio));
+            if(idroScale===1){idroX=0;idroY=0;}
+            idroApplyTransform();
+        } else if(e.touches.length===1 && idroScale>1 && idroPanStart){
+            e.preventDefault();
+            idroX=idroStartX+(e.touches[0].clientX-idroPanStart.x);
+            idroY=idroStartY+(e.touches[0].clientY-idroPanStart.y);
+            idroApplyTransform();
+        }
+    },{passive:false});
+
+    area.addEventListener('touchend',function(e){
+        if(e.touches.length<2) idroPinchDistance=0;
+        if(e.touches.length===0) idroPanStart=null;
+        if(idroScale<=1){idroScale=1;idroX=0;idroY=0;idroApplyTransform();}
+    },{passive:false});
+});
+
+document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') closeIdroLegend();
+});
+</script>
+
+</body>
+</html>

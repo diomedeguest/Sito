@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Trasporti - Diomede Luxury</title>
+    <meta name="theme-color" content="#F0EDE9">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Open+Sans:wght@400;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            margin: 0; padding: 0; 
+            background-color: #F0EDE9; 
+            color: #1a1a1a;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        /* LINGUA SWITCHER */
+        .lang-switcher {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .lang-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.6);
+            color: #1a1a1a;
+            font-size: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .lang-btn.active {
+            background: #A39689;
+            color: white;
+            border-color: #A39689;
+        }
+
+        /* HEADER */
+        .hero-header {
+            width: 100%;
+            height: 240px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px 20px;
+            overflow: hidden;
+        }
+
+        .logo-img {
+            width: 100%;
+            max-width: 300px; 
+            height: auto;
+            z-index: 5;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 60px;
+            background: linear-gradient(to top, #F0EDE9, rgba(240, 237, 233, 0));
+        }
+
+        /* CONTAINER */
+        .container { 
+            width: 100%; 
+            max-width: 900px; 
+            margin: -30px auto 0; 
+            padding: 0 20px 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        h2 { 
+            font-family: 'PT Serif', serif; 
+            font-size: 34px; 
+            margin: 0; 
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: #2c2c2c;
+        }
+        
+        .divider { width: 50px; height: 1px; background-color: #A39689; margin: 15px auto 35px; }
+
+        /* Griglia dei Trasporti */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-header { height: 280px; }
+            .logo-img { max-width: 400px; }
+            .container { margin-top: -40px; }
+            .info-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+            h2 { font-size: 40px; }
+        }
+
+        /* CARD TRASPORTI */
+        .info-card {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(163, 150, 137, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .info-icon {
+            margin-right: 15px;
+            font-size: 26px;
+            color: #A39689;
+            font-variation-settings: 'wght' 200;
+        }
+
+        .info-text h3 {
+            margin: 0;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 700;
+            color: #888;
+        }
+
+        .info-text p {
+            margin: 8px 0 0;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .flex-row { display: flex; gap: 10px; margin-top: 18px; }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border: 1px solid #A39689;
+            border-radius: 12px;
+            padding: 10px;
+            text-decoration: none;
+            color: #1a1a1a;
+            flex: 1;
+            transition: all 0.2s ease;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .action-btn.whatsapp {
+            background-color: rgba(37, 211, 102, 0.05);
+            border-color: #25D366;
+            color: #128C7E;
+        }
+
+        .action-btn:active { transform: scale(0.97); background-color: #f5f5f5; }
+
+        /* BACK BUTTON */
+        .back-btn-container { 
+            margin-top: 50px; 
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 40px;
+            background-color: #A39689; 
+            color: #ffffff; 
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:active { transform: scale(0.96); background-color: #8D8378; }
+
+        .back-btn .material-symbols-outlined {
+            margin-right: 10px;
+            font-size: 16px;
+            color: #ffffff;
+            font-variation-settings: 'wght' 500;
+        }
+    </style>
+
+<style id="diomede-global-back-style">
+.diomede-global-back{
+    position:fixed;
+    top:max(16px, env(safe-area-inset-top));
+    left:16px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #A39689;
+    background:#A39689;
+    color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    cursor:pointer;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:transform .18s ease, background .18s ease;
+    padding:0;
+}
+.diomede-global-back:active{
+    transform:scale(.94);
+    background:#8D8378;
+}
+.diomede-global-back .material-symbols-outlined{
+    font-size:20px;
+    line-height:1;
+    font-variation-settings:'wght' 300;
+}
+@media (max-width:480px){
+    .diomede-global-back{
+        top:max(14px, env(safe-area-inset-top));
+        left:14px;
+        width:36px;
+        height:36px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<button type="button" class="diomede-global-back" aria-label="Torna alla pagina precedente" title="Indietro" onclick="diomedeGoBack()">
+    <span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+
+
+    <div class="lang-switcher">
+        <div id="btn-it" class="lang-btn" onclick="setLanguage('it')">ITA</div>
+        <div id="btn-en" class="lang-btn" onclick="setLanguage('en')">ENG</div>
+    </div>
+
+    <div class="hero-header">
+        <img src="../assets/images/header.png" alt="Diomede Luxury Logo" class="logo-img">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+        <h2 data-it="Trasporti" data-en="Transportation">Trasporti</h2>
+        <div class="divider"></div>
+
+        <div class="info-grid">
+            
+            <div class="info-card">
+                <div class="card-header">
+                    <span class="material-symbols-outlined info-icon">local_taxi</span>
+                    <div class="info-text"><h3 data-it="Taxi Privato" data-en="Private Taxi">Taxi Privato</h3></div>
+                </div>
+                <div class="info-text">
+                    <p data-it="Servizio di fiducia. Consigliata la prenotazione." data-en="Trusted service. Reservation recommended."></p>
+                    <p style="font-size: 15px; color: #1a1a1a; margin-top: 5px; font-weight: 700;">Mario Rossi</p>
+                </div>
+                <div class="flex-row">
+                    <a href="tel:+39123456789" class="action-btn">
+                        <span class="material-symbols-outlined" style="margin-right: 6px; font-size: 18px;">call</span>
+                        <span data-it="Chiama" data-en="Call">Chiama</span>
+                    </a>
+                    <a href="https://wa.me/39123456789" class="action-btn whatsapp">
+                        <span class="material-symbols-outlined" style="margin-right: 6px; font-size: 18px;">chat</span>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-header">
+                    <span class="material-symbols-outlined info-icon">flight</span>
+                    <div class="info-text"><h3 data-it="Navetta Aeroporto" data-en="Airport Shuttle">Navetta Aeroporto</h3></div>
+                </div>
+                <div class="info-text">
+                    <p data-it="Linea AP: collegamento tra Aeroporto, Stazione FS e Porto Costa Morena." data-en="AP Line: connection between Airport, Railway Station, and Costa Morena Port."></p>
+                </div>
+                <div class="flex-row">
+                    <a href="#" target="_blank" class="action-btn">
+                        <span class="material-symbols-outlined" style="margin-right: 6px; font-size: 18px;">location_on</span>
+                        <span data-it="Posizione Fermata" data-en="Stop Location">Posizione Fermata</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-header">
+                    <span class="material-symbols-outlined info-icon">directions_boat</span>
+                    <div class="info-text"><h3 data-it="Porto di Brindisi" data-en="Brindisi Port">Porto di Brindisi</h3></div>
+                </div>
+                <div class="info-text">
+                    <p data-it="Il lungomare dista 2 min a piedi. Per i grandi traghetti usare bus AP o taxi (15 min)." data-en="The seafront is a 2-min walk away. For large ferries, use the AP bus or taxi (15 min)."></p>
+                </div>
+                <div class="flex-row">
+                    <a href="#" target="_blank" class="action-btn">
+                        <span class="material-symbols-outlined" style="margin-right: 6px; font-size: 18px;">location_on</span>
+                        <span data-it="Posizione Porto" data-en="Port Location">Posizione Porto</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-header">
+                    <span class="material-symbols-outlined info-icon">train</span>
+                    <div class="info-text"><h3 data-it="Stazione Centrale" data-en="Central Station">Stazione Centrale</h3></div>
+                </div>
+                <div class="info-text">
+                    <p data-it="Raggiungibile in soli 6 min a piedi percorrendo il suggestivo Corso Umberto I." data-en="Reach it in just 6 minutes on foot along the charming Corso Umberto I."></p>
+                </div>
+                <div class="flex-row">
+                    <a href="#" target="_blank" class="action-btn">
+                        <span class="material-symbols-outlined" style="margin-right: 6px; font-size: 18px;">directions_walk</span>
+                        <span data-it="Percorso a piedi" data-en="Walking Route">Percorso a piedi</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="back-btn-container">
+            <a href="menu.html" class="back-btn">
+                <span class="material-symbols-outlined">arrow_back_ios_new</span>
+                <span data-it="Torna alla home" data-en="Back to home">Torna alla home</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('preferredLang', lang);
+            
+            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('[data-it]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                el.textContent = text;
+            });
+        }
+
+        window.onload = () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'it';
+            setLanguage(savedLang);
+        };
+    </script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('../sw.js'));
+}
+</script>
+
+<script id="diomede-global-back-script">
+function diomedeGoBack(){
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        const path = window.location.pathname;
+        if (path.includes('/pages/istruzioni/')) {
+            window.location.href = '../istruzioni.html';
+        } else if (path.includes('/pages/')) {
+            window.location.href = 'menu.html';
+        } else {
+            window.location.href = 'pages/menu.html';
+        }
+    }
+}
+</script>
+
+</body>
+</html>

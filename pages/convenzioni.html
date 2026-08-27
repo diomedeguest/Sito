@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Partner - Diomede Luxury</title>
+    <meta name="theme-color" content="#F0EDE9">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Open+Sans:wght@400;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            margin: 0; padding: 0; 
+            background-color: #F0EDE9; 
+            color: #1a1a1a;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        /* LINGUA SWITCHER */
+        .lang-switcher {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .lang-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.6);
+            color: #1a1a1a;
+            font-size: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .lang-btn.active {
+            background: #A39689;
+            color: white;
+            border-color: #A39689;
+        }
+
+        /* HEADER */
+        .hero-header {
+            width: 100%;
+            height: 200px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px 20px;
+            overflow: hidden;
+        }
+
+        .logo-img {
+            width: 100%;
+            max-width: 250px; 
+            height: auto;
+            z-index: 5;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 60px;
+            background: linear-gradient(to top, #F0EDE9, rgba(240, 237, 233, 0));
+        }
+
+        /* CONTAINER */
+        .container { 
+            width: 100%; 
+            max-width: 1000px; 
+            margin: -20px auto 0; 
+            padding: 0 20px 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        h2 { 
+            font-family: 'PT Serif', serif; 
+            font-size: 30px; 
+            margin: 0; 
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: #2c2c2c;
+        }
+        
+        .divider { width: 40px; height: 1px; background-color: #A39689; margin: 12px auto 30px; }
+
+        /* GRIGLIA PARTNER - ADATTIVA */
+        .partner-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        /* MEDIA QUERY TABLET & DESKTOP */
+        @media (min-width: 600px) {
+            .partner-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .hero-header { height: 260px; }
+            .logo-img { max-width: 350px; }
+            h2 { font-size: 38px; }
+            .container { margin-top: -30px; }
+        }
+
+        /* CARD CATEGORIE */
+        .category-card {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(163, 150, 137, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none; 
+            color: inherit;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:active { 
+            transform: scale(0.98); 
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .left-content { display: flex; align-items: center; }
+
+        .main-icon { 
+            margin-right: 18px; 
+            font-size: 26px; 
+            color: #A39689;
+            font-variation-settings: 'wght' 200; 
+        }
+
+        .card-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-align: left;
+            color: #1a1a1a;
+        }
+
+        .touch-icon { 
+            font-size: 16px; 
+            opacity: 0.3; 
+            color: #A39689;
+        }
+
+        /* PULSANTE BACK */
+        .back-btn-container { 
+            margin-top: 60px; 
+            display: flex;
+            justify-content: center;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 45px;
+            background-color: #A39689; 
+            color: #ffffff; 
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:active { transform: scale(0.96); background-color: #8D8378; }
+
+        .back-btn .material-symbols-outlined {
+            margin-right: 10px;
+            font-size: 16px;
+            color: #ffffff;
+            font-variation-settings: 'wght' 500;
+        }
+    </style>
+
+<style id="diomede-global-back-style">
+.diomede-global-back{
+    position:fixed;
+    top:max(16px, env(safe-area-inset-top));
+    left:16px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #A39689;
+    background:#A39689;
+    color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    cursor:pointer;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:transform .18s ease, background .18s ease;
+    padding:0;
+}
+.diomede-global-back:active{
+    transform:scale(.94);
+    background:#8D8378;
+}
+.diomede-global-back .material-symbols-outlined{
+    font-size:20px;
+    line-height:1;
+    font-variation-settings:'wght' 300;
+}
+@media (max-width:480px){
+    .diomede-global-back{
+        top:max(14px, env(safe-area-inset-top));
+        left:14px;
+        width:36px;
+        height:36px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<button type="button" class="diomede-global-back" aria-label="Torna alla pagina precedente" title="Indietro" onclick="diomedeGoBack()">
+    <span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+
+
+    <div class="lang-switcher">
+        <div id="btn-it" class="lang-btn" onclick="setLanguage('it')">ITA</div>
+        <div id="btn-en" class="lang-btn" onclick="setLanguage('en')">ENG</div>
+    </div>
+
+    <div class="hero-header">
+        <img src="../assets/images/header.png" alt="Diomede Luxury Logo" class="logo-img">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+        <h2 data-it="Partner di Fiducia" data-en="Trusted Partners">Partner di Fiducia</h2>
+        <div class="divider"></div>
+
+        <div class="partner-grid">
+            
+            <a href="../pages/partners/ristoranti.html" class="category-card">
+                <div class="left-content">
+                    <span class="material-symbols-outlined main-icon">restaurant</span>
+                    <span class="card-title" data-it="Ristoranti e Pizzerie" data-en="Restaurants & Pizzerias">Ristoranti e Pizzerie</span>
+                </div>
+                <span class="material-symbols-outlined touch-icon">arrow_forward_ios</span>
+            </a>
+
+            <a href="../pages/partners/bar.html" class="category-card">
+                <div class="left-content">
+                    <span class="material-symbols-outlined main-icon">local_cafe</span>
+                    <span class="card-title" data-it="Café & Gelaterie" data-en="Café & Gelaterie">Café & Gelaterie</span>
+                </div>
+                <span class="material-symbols-outlined touch-icon">arrow_forward_ios</span>
+            </a>
+
+            <a href="../pages/partners/beauty.html" class="category-card">
+                <div class="left-content">
+                    <span class="material-symbols-outlined main-icon">spa</span>
+                    <span class="card-title" data-it="Beauty & Wellness" data-en="Beauty & Wellness">Beauty & Wellness</span>
+                </div>
+                <span class="material-symbols-outlined touch-icon">arrow_forward_ios</span>
+            </a>
+
+            <a href="../pages/partners/stores.html" class="category-card">
+                <div class="left-content">
+                    <span class="material-symbols-outlined main-icon">shopping_bag</span>
+                    <span class="card-title" data-it="Prodotti Locali" data-en="Local Products">Prodotti Locali</span>
+                </div>
+                <span class="material-symbols-outlined touch-icon">arrow_forward_ios</span>
+            </a>
+
+            <a href="../pages/partners/lavanderia.html" class="category-card">
+                <div class="left-content">
+                    <span class="material-symbols-outlined main-icon">local_laundry_service</span>
+                    <span class="card-title" data-it="Lavanderia & Sartoria" data-en="Laundry & Tailoring">Lavanderia & Sartoria</span>
+                </div>
+                <span class="material-symbols-outlined touch-icon">arrow_forward_ios</span>
+            </a>
+
+        </div>
+
+        <div class="back-btn-container">
+            <a href="menu.html" class="back-btn" data-it="Torna alla home" data-en="Back to home">
+                <span class="material-symbols-outlined">arrow_back_ios_new</span>
+                Torna alla home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('preferredLang', lang);
+            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.querySelectorAll('[data-it]').forEach(el => {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+        }
+
+        window.onload = () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'it';
+            setLanguage(savedLang);
+        };
+    </script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('../sw.js'));
+}
+</script>
+
+<script id="diomede-global-back-script">
+function diomedeGoBack(){
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        const path = window.location.pathname;
+        if (path.includes('/pages/istruzioni/')) {
+            window.location.href = '../istruzioni.html';
+        } else if (path.includes('/pages/')) {
+            window.location.href = 'menu.html';
+        } else {
+            window.location.href = 'pages/menu.html';
+        }
+    }
+}
+</script>
+
+</body>
+</html>

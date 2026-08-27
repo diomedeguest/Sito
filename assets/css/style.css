@@ -1,0 +1,384 @@
+/* style.css - Configurazione Diomede Luxury */
+
+/* 1. RESET E BASI */
+* { 
+    box-sizing: border-box; 
+    -webkit-tap-highlight-color: transparent; 
+}
+
+body { 
+    font-family: 'Open Sans', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #F0EDE9; 
+    color: #1a1a1a;
+    line-height: 1.4;
+}
+
+/* 2. LINGUA SWITCHER (ITA/ENG) */
+.lang-switcher {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+}
+
+.lang-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.6);
+    color: #1a1a1a;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.lang-btn.active {
+    background: #A39689;
+    color: white;
+    border-color: #A39689;
+}
+
+/* 3. HEADER & LOGO */
+.hero-header {
+    width: 100%;
+    height: 240px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+.logo-img {
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+    z-index: 5;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 60px;
+    background: linear-gradient(to top, #F0EDE9, rgba(240, 237, 233, 0));
+}
+
+/* 4. LAYOUT E CONTENUTI */
+.container { 
+    width: 100%; 
+    max-width: 900px; 
+    margin: -30px auto 0; 
+    padding: 0 20px 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.header-content { 
+    text-align: center; 
+    margin-bottom: 30px; 
+}
+
+h2 { 
+    font-family: 'PT Serif', serif; 
+    font-size: 34px; 
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #2c2c2c;
+}
+
+.divider { 
+    width: 50px; 
+    height: 1px; 
+    background-color: #A39689; 
+    margin: 10px auto; 
+}
+
+.image-container { 
+    text-align: center; 
+    margin-bottom: 35px; 
+}
+
+.instruction-image { 
+    width: 100%; 
+    max-width: 200px; 
+    height: auto; 
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08)); 
+}
+
+/* 5. GRIGLIA E CARDS */
+.instruction-section { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    text-align: left;
+}
+
+.instruction-card {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(163, 150, 137, 0.3);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.instruction-card h3 {
+    font-family: 'PT Serif', serif;
+    letter-spacing: 1.5px;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #8c7e70;
+}
+
+/* 6. LISTE E DETTAGLI */
+.step-list { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.step-list li { 
+    font-size: 14px; 
+    margin-bottom: 15px; 
+    color: #444; 
+    display: flex; 
+    gap: 12px; 
+}
+
+.step-list li .item-icon { 
+    color: #A39689; 
+    font-size: 18px; 
+    flex-shrink: 0; 
+}
+
+.step-list li strong { 
+    color: #000; 
+    display: block; 
+    margin-bottom: 2px; 
+}
+
+/* 7. BOX ATTENZIONE (ALERT) */
+.alert-box { 
+    background: rgba(163, 150, 137, 0.1); 
+    border-left: 2px solid #A39689; 
+    padding: 15px; 
+    border-radius: 0 12px 12px 0; 
+    margin-top: 10px;
+}
+
+.alert-box h4 { 
+    margin: 0 0 5px 0; 
+    font-size: 11px; 
+    text-transform: uppercase; 
+    color: #5D544C; 
+}
+
+.alert-box p { 
+    font-size: 12px; 
+    margin: 0; 
+    color: #6d645d; 
+    line-height: 1.5; 
+}
+
+/* 8. BOTTONE INDIETRO */
+.back-btn-container { 
+    text-align: center; 
+    margin-top: 50px; 
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 40px;
+    background-color: #A39689; 
+    color: #ffffff; 
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.back-btn:active { 
+    transform: scale(0.96); 
+    background-color: #8D8378; 
+}
+
+.back-btn .material-symbols-outlined { 
+    color: #fff; 
+    font-size: 16px; 
+    margin-right: 10px; 
+}
+
+/* 9. RESPONSIVITÀ TABLET/DESKTOP */
+@media (min-width: 768px) {
+    .instruction-section { grid-template-columns: 1fr 1fr; }
+    .full-width-tablet { grid-column: span 2; }
+    .logo-img { max-width: 400px; }
+    .hero-header { height: 280px; }
+    .container { margin-top: -40px; }
+    h2 { font-size: 40px; }
+}
+/* Guida visuale pannello vasca idromassaggio */
+.control-panel-guide-card .guide-intro {
+    margin: -3px 0 18px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #555;
+}
+
+.control-panel-guide-wrap {
+    width: 100%;
+    text-align: center;
+}
+
+.control-panel-guide-image {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 1px solid rgba(163, 150, 137, 0.22);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 600px) {
+    .control-panel-guide-card {
+        padding: 18px 14px;
+    }
+    .control-panel-guide-card .guide-intro {
+        font-size: 0.88rem;
+    }
+    .control-panel-guide-image {
+        border-radius: 8px;
+    }
+}
+
+
+
+/* DIOMEDE_INSTRUCTION_UNIFORM_V41
+   Struttura visiva comune a tutte le pagine della cartella istruzioni */
+body.instruction-page .container{
+    width:100%;
+    max-width:900px;
+    margin:-30px auto 0;
+    padding:0 20px 80px;
+    position:relative;
+    z-index:10;
+}
+body.instruction-page .header-content{
+    text-align:center;
+    margin-bottom:30px;
+}
+body.instruction-page .header-content h2{
+    margin-top:0;
+}
+body.instruction-page .image-container{
+    width:100%;
+    text-align:center;
+    margin:0 auto 35px;
+}
+body.instruction-page .instruction-section{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+    text-align:left;
+}
+body.instruction-page .instruction-card{
+    width:100%;
+    box-sizing:border-box;
+    background-color:rgba(255,255,255,.5);
+    border:1px solid rgba(163,150,137,.3);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.03);
+}
+body.instruction-page .instruction-card h3{
+    margin-top:0;
+}
+body.instruction-page .step-list{
+    width:100%;
+    box-sizing:border-box;
+}
+
+/* Le immagini prodotto mantengono le proprie proporzioni,
+   ma restano sempre centrate nella stessa area della pagina. */
+body.instruction-page .image-container img{
+    height:auto;
+    object-fit:contain;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* La legenda idromassaggio è più larga perché contiene testo,
+   senza alterare larghezza e proporzioni della pagina. */
+body.instruction-page .idro-manual-wrap{
+    width:100%;
+    margin:0 auto 35px;
+}
+body.instruction-page .idro-manual-image{
+    display:block;
+    width:100%;
+    max-width:820px;
+    height:auto;
+    margin:0 auto;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+@media(max-width:600px){
+    body.instruction-page .container{
+        width:100%;
+        max-width:100%;
+        margin:-30px auto 0;
+        padding:0 16px 64px;
+        box-sizing:border-box;
+    }
+    body.instruction-page .header-content{
+        margin-bottom:24px;
+    }
+    body.instruction-page .image-container{
+        margin-bottom:28px;
+    }
+    body.instruction-page .instruction-section{
+        gap:16px;
+    }
+    body.instruction-page .instruction-card{
+        border-radius:18px;
+        padding:20px;
+    }
+    body.instruction-page .idro-manual-wrap{
+        margin-bottom:28px;
+    }
+    body.instruction-page .idro-manual-image{
+        width:100%;
+        max-width:100%;
+        border-radius:8px;
+    }
+}

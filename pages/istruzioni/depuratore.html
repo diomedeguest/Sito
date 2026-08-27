@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"><title>Depuratore d'acqua - Diomede Luxury</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Open+Sans:wght@300;400;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../assets/css/style.css"><style>.appliance-illustration{width:170px;height:125px;margin:0 auto;display:flex;align-items:center;justify-content:center;border-radius:22px;background:rgba(255,255,255,.48);border:1px solid rgba(163,150,137,.25);box-shadow:0 12px 28px rgba(0,0,0,.05)}.appliance-illustration .material-symbols-outlined{font-size:72px;color:#A39689;font-variation-settings:'wght' 150}.model-label{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:#8c7e70;margin-top:9px}</style>
+<style id="diomede-global-back-style">
+.diomede-global-back{
+    position:fixed;
+    top:max(16px, env(safe-area-inset-top));
+    left:16px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #A39689;
+    background:#A39689;
+    color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    cursor:pointer;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:transform .18s ease, background .18s ease;
+    padding:0;
+}
+.diomede-global-back:active{
+    transform:scale(.94);
+    background:#8D8378;
+}
+.diomede-global-back .material-symbols-outlined{
+    font-size:20px;
+    line-height:1;
+    font-variation-settings:'wght' 300;
+}
+@media (max-width:480px){
+    .diomede-global-back{
+        top:max(14px, env(safe-area-inset-top));
+        left:14px;
+        width:36px;
+        height:36px;
+    }
+}
+</style>
+
+
+<style id="diomede-instruction-home-style">
+.diomede-home-btn{
+    text-decoration:none;
+    position:fixed;
+    top:max(16px, env(safe-area-inset-top));
+    left:62px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #A39689;
+    background:#A39689;
+    color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    cursor:pointer;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:transform .18s ease, background .18s ease;
+    padding:0;
+}
+.diomede-home-btn:active{
+    transform:scale(.94);
+    background:#8D8378;
+}
+.diomede-home-btn .material-symbols-outlined{
+    text-decoration:none;
+    font-size:24px;
+    line-height:1;
+    font-variation-settings:'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+@media (max-width:480px){
+    .diomede-home-btn{
+        top:max(14px, env(safe-area-inset-top));
+        left:58px;
+        width:36px;
+        height:36px;
+    }
+}
+</style>
+
+</head><body class="instruction-page">
+
+<button type="button" class="diomede-global-back" aria-label="Torna alla pagina precedente" title="Indietro" onclick="diomedeGoBack()">
+    <span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+
+<a href="../menu.html" class="diomede-home-btn" aria-label="Vai alla Home" title="Home">
+    <span class="material-symbols-outlined">home</span>
+</a>
+
+
+<div class="lang-switcher"><div id="btn-it" class="lang-btn" onclick="setLanguage('it')">ITA</div><div id="btn-en" class="lang-btn" onclick="setLanguage('en')">ENG</div></div>
+<div class="hero-header"><img src="../../assets/images/header.png" alt="Diomede Luxury Logo" class="logo-img"><div class="hero-overlay"></div></div>
+<div class="container"><div class="header-content"><h2 data-it="Depuratore d'acqua" data-en="Water Dispenser">Depuratore d'acqua</h2><div class="divider"></div></div>
+<div class="image-container"><div class="appliance-illustration"><span class="material-symbols-outlined">water_drop</span></div><div class="model-label">Blupura Hydrazon</div></div>
+<div class="instruction-section">
+<div class="instruction-card"><h3><span class="material-symbols-outlined">counter_1</span><span data-it="1. Erogazione" data-en="1. Dispensing">1. Erogazione</span></h3><ul class="step-list">
+<li><span class="material-symbols-outlined item-icon">local_drink</span><div><strong data-it="Posiziona il bicchiere" data-en="Place your glass">Posiziona il bicchiere</strong><span data-it="Metti il bicchiere o la borraccia sotto l'erogatore." data-en="Place your glass or bottle under the dispenser."></span></div></li>
+<li><span class="material-symbols-outlined item-icon">touch_app</span><div><strong data-it="Scegli l'acqua" data-en="Choose your water">Scegli l'acqua</strong><span data-it="Premi e mantieni premuto il pulsante corrispondente al tipo di acqua desiderato. Rilascia quando hai raggiunto la quantità desiderata." data-en="Press and hold the button for the water you want. Release it when you have the desired amount."></span></div></li>
+</ul></div>
+<div class="instruction-card"><h3><span class="material-symbols-outlined">counter_2</span><span data-it="2. Tipi di acqua" data-en="2. Water options">2. Tipi di acqua</span></h3><ul class="step-list">
+<li><span class="material-symbols-outlined item-icon">ac_unit</span><div><strong data-it="Fredda / Ambiente" data-en="Cold / Ambient">Fredda / Ambiente</strong><span data-it="Seleziona il simbolo corrispondente per acqua fredda oppure a temperatura ambiente." data-en="Select the corresponding symbol for cold or room-temperature water."></span></div></li>
+<li><span class="material-symbols-outlined item-icon">bubble_chart</span><div><strong data-it="Acqua gassata" data-en="Sparkling water">Acqua gassata</strong><span data-it="Se disponibile sul pannello, scegli leggermente gassata o gassata e mantieni premuto durante l'erogazione." data-en="If available on the panel, choose lightly sparkling or sparkling and keep the control pressed while dispensing."></span></div></li>
+<li><span class="material-symbols-outlined item-icon">local_cafe</span><div><strong data-it="Acqua calda" data-en="Hot water">Acqua calda</strong><span data-it="Per tè e tisane seleziona il comando dell’acqua calda e mantienilo premuto durante l’erogazione." data-en="For tea and herbal infusions, select the hot-water control and keep it pressed while dispensing.">Per tè e tisane seleziona il comando dell’acqua calda e mantienilo premuto durante l’erogazione.</span></div></li>
+</ul></div>
+<div class="instruction-card full-width-tablet"><h3><span class="material-symbols-outlined">info</span><span data-it="Da ricordare" data-en="Good to know">Da ricordare</span></h3><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;">
+<div class="alert-box"><h4 data-it="Acqua calda: usa una tazza" data-en="Hot water: use a cup">Acqua calda: usa una tazza</h4><p data-it="Per l’acqua calda usa sempre una tazza resistente al calore. Non utilizzare i bicchieri di plastica: l’acqua può essere molto calda e potrebbe deformarli o scioglierli. Fai attenzione al rischio di scottature." data-en="Always use a heat-resistant cup for hot water. Do not use plastic cups: the water can be very hot and may deform or melt them. Beware of scalding.">Per l’acqua calda usa sempre una tazza resistente al calore. Non utilizzare i bicchieri di plastica: l’acqua può essere molto calda e potrebbe deformarli o scioglierli. Fai attenzione al rischio di scottature.</p></div>
+<div class="alert-box"><h4 data-it="Bottiglie e borracce" data-en="Bottles">Bottiglie e borracce</h4><p data-it="La zona di erogazione è alta 28 cm ed è adatta anche a bottiglie e borracce." data-en="The 28 cm dispensing area also accommodates bottles and reusable bottles.">La zona di erogazione è alta 28 cm ed è adatta anche a bottiglie e borracce.</p></div>
+<div class="alert-box"><h4 data-it="Non modificare la macchina" data-en="Do not adjust the machine">Non modificare la macchina</h4><p data-it="Non aprire il mobile e non intervenire su filtri, bombola CO₂ o regolazioni interne. In caso di problema contatta la struttura." data-en="Do not open the cabinet or adjust filters, the CO₂ cylinder or internal settings. If there is a problem, contact the property.">Non aprire il mobile e non intervenire su filtri, bombola CO₂ o regolazioni interne. In caso di problema contatta la struttura.</p></div>
+</div></div></div>
+<div class="back-btn-container"><a href="../istruzioni.html" class="back-btn"><span class="material-symbols-outlined">arrow_back_ios_new</span><span data-it="Torna alle istruzioni" data-en="Back to instructions">Torna alle istruzioni</span></a></div></div>
+<script>function setLanguage(lang){localStorage.setItem('preferredLang',lang);document.getElementById('btn-it').classList.toggle('active',lang==='it');document.getElementById('btn-en').classList.toggle('active',lang==='en');document.querySelectorAll('[data-it]').forEach(el=>{el.textContent=el.getAttribute('data-'+lang);});}window.onload=()=>setLanguage(localStorage.getItem('preferredLang')||'it');if('serviceWorker'in navigator)navigator.serviceWorker.register('../../sw.js');</script>
+<script id="diomede-global-back-script">
+function diomedeGoBack(){
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        const path = window.location.pathname;
+        if (path.includes('/pages/istruzioni/')) {
+            window.location.href = '../istruzioni.html';
+        } else if (path.includes('/pages/')) {
+            window.location.href = 'menu.html';
+        } else {
+            window.location.href = 'pages/menu.html';
+        }
+    }
+}
+</script>
+
+</body></html>

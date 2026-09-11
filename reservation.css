@@ -1,0 +1,356 @@
+/* Stili della prenotazione: separati dal tema per facilitarne le modifiche. */
+.stay-calendar {
+  border: 1px solid var(--line);
+  padding: 20px;
+  margin: 0 0 24px;
+  background: #fff;
+}
+.calendar-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.calendar-toolbar strong {
+  text-transform: capitalize;
+  font-size: 18px;
+}
+.calendar-toolbar button,
+.calendar-days button {
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.calendar-toolbar button {
+  min-width: 44px;
+  font-size: 22px;
+}
+.calendar-week,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+  text-align: center;
+}
+.calendar-week {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 18px 0 8px;
+}
+.calendar-days button {
+  font-size: 16px;
+  width: 100%;
+  padding: 4px;
+}
+.calendar-days button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.calendar-days button.occupied {
+  text-decoration: line-through;
+}
+.calendar-days button.in-range {
+  background: var(--bg);
+}
+.calendar-days button.selected {
+  background: var(--accent-dark, #775b43);
+  color: white;
+}
+.calendar-days button[aria-current='date'] {
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.calendar-days button:hover:not(:disabled):not(.selected) {
+  background: var(--bg);
+}
+.calendar-clear {
+  border: 0;
+  background: none;
+  text-decoration: underline;
+  color: var(--ink);
+  padding: 14px 0;
+  font: inherit;
+  cursor: pointer;
+}
+#calendar-instruction {
+  font-size: 14px;
+  margin: 12px 0;
+}
+.stay-conditions {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+  margin: 20px 0;
+}
+.stay-conditions summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+.stay-conditions dl > div,
+.confirmed-summary dl > div {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+.stay-conditions dt,
+.confirmed-summary dt {
+  font-weight: 600;
+  font-size: 14px;
+}
+.stay-conditions dd,
+.confirmed-summary dd {
+  margin: 4px 0 0;
+  font-size: 15px;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.confirmed-summary {
+  max-width: 640px;
+  margin: 24px auto;
+  text-align: left;
+}
+#booking-summary {
+  scroll-margin-top: 110px;
+}
+@media (max-width: 520px) {
+  .stay-calendar {
+    padding: 12px;
+  }
+  .calendar-week {
+    font-size: 12px;
+  }
+}
+.reservation-section {
+  padding-top: 54px !important;
+}
+.reservation-section > .container > .section-head {
+  margin-bottom: 30px !important;
+}
+.reservation-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(290px, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+.reservation-layout > * {
+  min-width: 0;
+}
+.reservation-notice {
+  padding: 16px 20px;
+  background: var(--bg);
+  border-left: 2px solid var(--accent);
+  max-width: none !important;
+  margin: 0 0 32px;
+}
+.reservation-notice a,
+.reservation-policies a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.reservation-panel {
+  border: 0;
+  border-top: 1px solid var(--line);
+  padding: 26px 0 32px;
+  margin: 0;
+  min-width: 0;
+}
+.reservation-panel legend {
+  font:
+    500 25px/1.25 'Playfair Display',
+    serif;
+  padding: 0 18px 0 0;
+}
+.reservation-panel legend span {
+  font:
+    500 14px 'DM Sans',
+    sans-serif;
+  color: var(--accent);
+  margin-right: 10px;
+}
+.reservation-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.reservation-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 14px;
+}
+.reservation-fields input,
+.reservation-fields select,
+.reservation-fields textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 12px;
+  background: #fff;
+  font:
+    400 16px 'DM Sans',
+    sans-serif;
+  color: var(--ink);
+}
+.reservation-fields textarea {
+  resize: vertical;
+}
+.reservation-full {
+  grid-column: 1/-1;
+}
+.reservation-main input:focus-visible,
+.reservation-main select:focus-visible,
+.reservation-main textarea:focus-visible,
+.reservation-main button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.reservation-main .reservation-help {
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+}
+.reservation-main .btn {
+  min-height: 48px;
+  font-size: 14px !important;
+  cursor: pointer;
+}
+.reservation-main .btn:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+  transform: none !important;
+}
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 58px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  font-weight: 600;
+  font-size: 16px;
+  background: #fff;
+  cursor: pointer;
+}
+.payment-method:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--bg);
+}
+.payment-method:has(input:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.payment-method input,
+.reservation-policies input {
+  accent-color: var(--accent-dark);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.reservation-policies label {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.reservation-summary {
+  border: 1px solid var(--line);
+  background: #fff;
+  position: sticky;
+  top: 110px;
+}
+.reservation-summary > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.65;
+  object-fit: cover;
+}
+.reservation-summary-body {
+  padding: 28px;
+}
+.reservation-summary h2 {
+  font-size: 30px !important;
+  line-height: 1.15 !important;
+}
+.reservation-summary dl {
+  margin: 24px 0;
+}
+.reservation-summary dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.reservation-summary dd {
+  margin: 0;
+  text-align: right;
+}
+.reservation-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  font-size: 20px;
+}
+.reservation-summary .btn {
+  width: 100%;
+  margin-top: 12px;
+}
+.price-lines {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+}
+.price-lines li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 0;
+}
+#quote-status,
+#checkout-status {
+  font-size: 14px !important;
+  overflow-wrap: anywhere;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .reservation-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .reservation-summary {
+    position: static;
+  }
+  .reservation-summary > img {
+    max-height: 220px;
+  }
+  .reservation-section {
+    padding-top: 38px !important;
+  }
+}
+@media (max-width: 520px) {
+  .reservation-fields {
+    grid-template-columns: 1fr;
+  }
+  .reservation-summary-body {
+    padding: 22px;
+  }
+  .payment-methods {
+    grid-template-columns: 1fr;
+  }
+  .reservation-panel legend {
+    font-size: 23px;
+  }
+}

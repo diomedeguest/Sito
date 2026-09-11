@@ -1,0 +1,14 @@
+.video-shell {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.video-note {
+  margin-top: 20px;
+  padding: 18px 20px;
+  border-left: 3px solid var(--bronze);
+  background: var(--ivory);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}

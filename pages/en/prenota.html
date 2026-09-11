@@ -1,0 +1,332 @@
+<!doctype html>
+
+<html lang="en"
+  ><head
+    ><meta charset="utf-8" /><meta
+      content="width=device-width,initial-scale=1"
+      name="viewport" /><title>Book direct | Diomede Luxury</title
+    ><link href="https://fonts.googleapis.com" rel="preconnect" /><link
+      crossorigin=""
+      href="https://fonts.gstatic.com"
+      rel="preconnect" /><link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap"
+      rel="stylesheet" /><link rel="stylesheet" href="../../base.css" /><link
+      href="../../luxury.css"
+      rel="stylesheet" /><script defer="" src="../../luxury.js"></script
+    ><meta content="Book your stay at Diomede Luxury in Brindisi." name="description" /><meta
+      content="website"
+      property="og:type" /><meta
+      content="Diomede Luxury Apartment Messapia"
+      property="og:site_name" /><meta
+      content="Book your stay at Diomede Luxury in Brindisi."
+      property="og:title" /><meta
+      content="Book your stay at Diomede Luxury in Brindisi."
+      property="og:description" /><meta content="en_GB" property="og:locale" /><meta
+      content="index,follow"
+      name="robots" /><meta content="#fffdf9" name="theme-color" /><link
+      rel="stylesheet"
+      href="../../reservation.css" /><script defer src="../../reservation-config.js"></script
+    ><script defer src="../../reservation-utils.js"></script
+    ><script defer src="../../reservation-api.js"></script
+    ><script defer src="../../reservation-calendar.js"></script
+    ><script defer src="../../reservation.js"></script
+    ><link rel="stylesheet" href="../../reservation-experience.css" /><script
+      defer
+      src="../../reservation-experience.js"
+    ></script
+    ><link rel="icon" href="../../favicon.ico?v=66" sizes="16x16 32x32 48x48 128x128" />
+    <link rel="icon" type="image/png" sizes="128x128" href="../../assets/images/favicon.png?v=66" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png?v=66" /></head
+  ><body class="page-reservation en"
+    ><header class="header"
+      ><div class="container nav"
+        ><a href="index.html"
+          ><img alt="Diomede Luxury Apartment Messapia" class="logo" src="../../assets/images/logo.png" /></a
+        ><nav class="links"
+          ><a href="index.html">Home</a><a href="gallery.html">Gallery</a
+          ><a href="servizi.html">Services</a><a href="salento.html">Brindisi &amp; Salento</a
+          ><a href="dove-siamo.html">Location</a><a href="contatti.html">Contact</a
+          ><a href="prenota.html">Book</a></nav
+        ><span class="langs"
+          ><a href="../prenota.html" lang="it">IT</a>  |  <strong>EN</strong></span
+        ><button aria-label="Menu" class="menu">☰</button></div
+      ></header
+    ><main class="reservation-main"
+      ><nav aria-label="Breadcrumb" class="container breadcrumbs"
+        ><a href="index.html">Home</a><span aria-hidden="true"> / </span
+        ><span aria-current="page">Book your stay</span></nav
+      >
+      <section class="section reservation-section"
+        ><div class="container"
+          ><div class="section-head booking-heading"
+            ><div
+              ><div class="kicker">Diomede Luxury · Brindisi</div><h1>Book your stay.</h1
+              ><p>Your dates. Your space. Time for you.</p></div
+            ><a class="booking-help" href="contatti.html">Need a hand booking? ↗</a></div
+          ><p id="flow-status" class="reservation-help" role="status" aria-live="polite"></p
+          ><nav class="booking-steps" aria-label="Reservation sections"
+            ><a href="#stay-section" aria-current="location"><span>01</span>Your stay</a
+            ><a href="#guest-section"><span>02</span>Your details</a
+            ><a href="#payment-section"><span>03</span>Payment</a></nav
+          >
+          <p class="reservation-notice" id="service-notice" role="status"
+            >Online reservations are not yet active. Please contact us to book.
+            <a href="contatti.html">Contact us</a></p
+          >
+          <div class="reservation-layout"
+            ><form id="reservation-form" onsubmit="return false;" autocomplete="on" novalidate>
+              <fieldset class="reservation-panel" id="stay-section"
+                ><legend tabindex="-1"><span>01</span> Choose your dates</legend
+                ><div class="booking-date-fields reservation-fields"
+                  ><label
+                    >Check-in<input
+                      type="date"
+                      id="arrival"
+                      required
+                      aria-describedby="arrival-error" /><span
+                      class="field-error"
+                      id="arrival-error"
+                      hidden
+                    ></span
+                  ></label>
+                  <label
+                    >Check-out<input
+                      type="date"
+                      id="departure"
+                      required
+                      aria-describedby="departure-error" /><span
+                      class="field-error"
+                      id="departure-error"
+                      hidden
+                    ></span></label
+                  ><label
+                    >Adults<select id="adults" required aria-describedby="adults-error"
+                      ><option value="1">1</option
+                      ><option value="2" selected>2</option
+                      ><option value="3">3</option
+                      ><option value="4">4</option></select
+                    ><span class="field-error" id="adults-error" hidden></span></label
+                  ><label
+                    >Children<select id="children" aria-describedby="children-error"
+                      ><option value="0">0</option
+                      ><option value="1">1</option
+                      ><option value="2">2</option
+                      ><option value="3">3</option></select
+                    ><span class="field-error" id="children-error" hidden></span></label
+                  ><input id="guests" type="hidden" value="2" /></div
+                ><div
+                  class="stay-calendar"
+                  id="stay-calendar"
+                  role="group"
+                  aria-label="Stay calendar"
+                  ><div class="calendar-toolbar"
+                    ><button type="button" id="calendar-prev" aria-label="Previous month">←</button
+                    ><span>Calendar</span
+                    ><button type="button" id="calendar-next" aria-label="Next month"
+                      >→</button
+                    ></div
+                  ><p id="calendar-instruction" aria-live="polite"></p
+                  ><div class="calendar-months"
+                    ><section class="calendar-month-view" aria-labelledby="calendar-month"
+                      ><h3 id="calendar-month" aria-live="polite"></h3
+                      ><div class="calendar-week" aria-hidden="true"
+                        ><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span
+                        ><span>Fri</span><span>Sat</span><span>Sun</span></div
+                      ><div class="calendar-days" id="calendar-days"></div></section></div
+                  ><button type="button" class="calendar-clear" id="calendar-clear"
+                    >Clear dates</button
+                  ><p class="reservation-help" id="calendar-status" role="status"
+                    >Select your dates; availability still needs to be checked.</p
+                  ></div
+                ><div class="reservation-fields cot-fields"
+                  ><label
+                    >Baby cot<select id="cot"
+                      ><option value="no">No</option
+                      ><option value="yes">Yes</option></select
+                    ></label
+                  ></div
+                >
+                <p class="reservation-help"
+                  >Maximum 4 guests in total, including children. A baby cot is already
+                  available.</p
+                ><p class="reservation-help" id="date-help"
+                  >Availability must be checked before payment.</p
+                >
+                <button class="btn primary" type="button" id="check-dates" disabled
+                  >Check availability and price</button
+                ><p id="quote-status" role="status" aria-live="polite"></p
+              ></fieldset>
+              <fieldset class="reservation-panel" id="guest-section" hidden
+                ><legend tabindex="-1"><span>02</span> Who’s coming to stay?</legend
+                ><div class="reservation-fields">
+                  <label
+                    >First name<input
+                      id="first-name"
+                      autocomplete="given-name"
+                      maxlength="80"
+                      required
+                      aria-describedby="first-name-error" /><span
+                      class="field-error"
+                      id="first-name-error"
+                      hidden
+                    ></span
+                  ></label>
+                  <label
+                    >Last name<input
+                      id="last-name"
+                      autocomplete="family-name"
+                      maxlength="80"
+                      required
+                      aria-describedby="last-name-error" /><span
+                      class="field-error"
+                      id="last-name-error"
+                      hidden
+                    ></span
+                  ></label>
+                  <label
+                    >Email<input
+                      id="guest-email"
+                      autocomplete="email"
+                      type="email"
+                      maxlength="254"
+                      required
+                      aria-describedby="guest-email-error" /><span
+                      class="field-error"
+                      id="guest-email-error"
+                      hidden
+                    ></span
+                  ></label>
+                  <label
+                    >Phone number<input
+                      id="guest-phone"
+                      autocomplete="tel"
+                      type="tel"
+                      maxlength="40"
+                      required
+                      aria-describedby="guest-phone-error" /><span
+                      class="field-error"
+                      id="guest-phone-error"
+                      hidden
+                    ></span
+                  ></label>
+                  <details class="reservation-full booking-notes"
+                    ><summary>Add a note to your stay</summary
+                    ><label
+                      >Optional notes<textarea
+                        id="guest-notes"
+                        rows="3"
+                        maxlength="2000"
+                      ></textarea></label></details></div
+                ><div class="booking-section-action"
+                  ><button class="btn" type="button" data-back="stay-section">Back</button
+                  ><button class="btn primary" type="button" id="go-payment"
+                    >Continue to payment →</button
+                  ></div
+                ></fieldset
+              >
+              <fieldset class="reservation-panel" id="payment-section" hidden
+                ><legend tabindex="-1"><span>03</span> Complete your reservation</legend
+                ><p>Choose from the methods available for your reservation.</p>
+                <div class="payment-methods"
+                  ><label class="payment-method"
+                    ><input type="radio" name="payment" value="paypal" disabled required /><span
+                      >PayPal</span
+                    ></label
+                  ><label class="payment-method"
+                    ><input type="radio" name="payment" value="klarna" disabled required /><span
+                      >Klarna</span
+                    ></label
+                  ><label class="payment-method"
+                    ><input type="radio" name="payment" value="nexi" disabled required /><span
+                      >Nexi</span
+                    ></label
+                  ></div
+                >
+                <p id="payment-help" class="reservation-help"
+                  >Online payments are not yet active.</p
+                >
+                <details class="policy-summary"
+                  ><summary>Cancellation and deposit</summary><dl id="stay-rules"></dl></details
+                ><div class="reservation-policies" id="policies" hidden
+                  ><p
+                    ><a id="privacy-link" target="_blank" rel="noopener">Privacy notice</a> ·
+                    <a id="terms-link" target="_blank" rel="noopener">Reservation terms</a></p
+                  ><label
+                    ><input id="terms-consent" type="checkbox" required /> I have read the privacy
+                    notice and accept the reservation terms.</label
+                  ></div
+                >
+                <p class="reservation-help"
+                  >Confirmation will be issued only after payment and reservation have been
+                  verified.</p
+                >
+                <div class="booking-section-action"
+                  ><button class="btn" type="button" data-back="guest-section">Back</button
+                  ><button
+                    class="btn primary"
+                    type="submit"
+                    form="reservation-form"
+                    id="pay-button"
+                    disabled
+                    >Proceed to payment</button
+                  ><p id="checkout-status" role="status" aria-live="polite"></p></div></fieldset
+            ></form>
+            <aside class="reservation-summary" id="booking-summary"
+              ><div class="reservation-summary-body"
+                ><div class="kicker">Your stay</div><h2>Apartment Messapia</h2
+                ><p class="booking-address">Via Armengol 52 · Brindisi</p
+                ><div class="booking-property-meta"
+                  ><span>Up to 4 guests</span
+                  ><button type="button" id="edit-stay">Edit stay</button></div
+                ><dl
+                  ><div><dt>Check-in</dt><dd id="summary-arrival">—</dd></div
+                  ><div><dt>Check-out</dt><dd id="summary-departure">—</dd></div
+                  ><div><dt>Nights</dt><dd id="summary-nights">—</dd></div
+                  ><div><dt>Guests</dt><dd id="summary-guests">2 adults · 0 children</dd></div
+                  ><div><dt>Baby cot</dt><dd id="summary-cot">No</dd></div></dl
+                >
+                <ul id="price-lines" class="price-lines"></ul
+                ><div class="reservation-total"
+                  ><span>Stay total</span><strong id="summary-total">—</strong></div
+                ><p id="price-help" class="reservation-help"
+                  >The price will be shown after checking your dates.</p
+                >
+                <a class="booking-summary-help" href="contatti.html"
+                  >A question before you book?</a
+                ></div
+              ></aside
+            ></div
+          >
+          <noscript><p>Enable JavaScript to use online reservations, or contact us.</p></noscript>
+        </div></section
+      ></main
+    ><footer class="footer"
+      ><div class="container footer-grid"
+        ><div
+          ><h4>Diomede Luxury Apartment Messapia</h4
+          ><p
+            >An elegant and comfortable stay in the heart of Brindisi, combining contemporary
+            design, local stone and authentic Puglian atmosphere.</p
+          ></div
+        ><div
+          ><h4>Explore</h4
+          ><p
+            ><a href="servizi.html">Services</a><br /><a href="salento.html"
+              >Brindisi &amp; Salento</a
+            ><br /><a href="dove-siamo.html">Location</a></p
+          ></div
+        ><div
+          ><h4>Contact</h4
+          ><p
+            ><a href="contatti.html">Contact us</a><br /><a href="prenota.html">Book now</a
+            ><br />Via Armengol 52, 72100 Brindisi
+            ></p
+          ></div
+        ></div
+      ><div class="container copyright"
+        >© 2026 Diomede Luxury Apartment Messapia · All rights reserved</div
+      ></footer
+    ></body
+  ></html
+>
